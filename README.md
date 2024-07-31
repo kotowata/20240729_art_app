@@ -55,16 +55,16 @@ mvpリリースまで<br>
 <br>
 
 ### ■ 機能の実装方針予定
-**フロントエンド：**
+**フロントエンド：**<br>
 HTML/CSS<br>
 JavaScript<br>
 <br>
 
-**バックエンド：**
+**バックエンド：**<br>
 Ruby on Rails<br>
 <br>
 
-**現時点で想定してるgemやライブラリ：**
+**現時点で想定してるgemやライブラリ：**<br>
 sorcery<br>
 rails-i18n<br>
 draper<br>
@@ -81,9 +81,9 @@ enum_help<br>
 whenever<br>
 letter_opener_web<br>
 <br>
-Vibrant.js
-ColorThief
+Vibrant.js<br>
+ColorThief<br>
 <br>
 
-**デプロイに使用するサービス：**
+**デプロイに使用するサービス：**<br>
 Render.com<br>
