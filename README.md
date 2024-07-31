@@ -55,11 +55,6 @@ mvpリリースまで<br>
 <br>
 
 ### ■ 機能の実装方針予定
-まだ漠然とした案ですが、<br>
-投稿画像に合わせて背景色などのデザインを変化させる機能をつけたいと考えています。<br>
-[Vibrant.js](https://github.com/jariz/vibrant.js/)<br>
-[ColorThief](https://github.com/lokesh/color-thief)<br>
-
 **フロントエンド：**
 HTML/CSS<br>
 JavaScript<br>
