@@ -5,7 +5,7 @@ Figma：https://www.figma.com/design/m8NSla9F8igoj9aAnLWSbJ/%E5%8D%92%E6%A5%AD%E
 <br>
 
 ### ER図
-Draw.io： https://drive.google.com/file/d/1w2UQke51MKE6t_NhGbtKBDcHQAB0QkRg/view?usp=sharing
+Draw.io：https://drive.google.com/file/d/1l5MBVvzUgPHwV4Kf-2PAVhCRNDRjmqCY/view
 <br>
 
 ### ■サービス概要
