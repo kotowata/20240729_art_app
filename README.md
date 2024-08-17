@@ -92,6 +92,8 @@ letter_opener_web<br>
 Vibrant.js<br>
 ColorThief<br>
 <br>
+画像利用参照元：https://www.metmuseum.org/ja/about-the-met/policies-and-documents/open-access<br>
+<br>
 
 **デプロイに使用するサービス：**<br>
 Render.com<br>
