@@ -50,6 +50,8 @@ group :development, :test do
 
   # 追加
   gem "rubocop", "~> 1.65", require: false
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 end
 
 group :development do
