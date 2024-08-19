@@ -12,7 +12,11 @@
   </head>
 
   <body class="mt-24 bg-orange-600">
-    <%= render 'shared/header' %>
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
