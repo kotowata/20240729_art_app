@@ -1,0 +1,34 @@
+ja:
+  helpers:
+    submit:
+      login: ログイン
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      first_name: 名
+      last_name: 姓
+      nick_name: ニックネーム
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード確認
+  static_pages:
+    top:
+      title: (仮)卒業制作APP
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 登録ページへ
+      password_forget: パスワードをお忘れの方はこちら
+  users:
+    new:
+      title: ユーザー登録
+  header:
+    title_logo: (仮)卒業制作APP
+    login: ログイン
+    logout: ログアウト
+    board: 投稿一覧
+  footer:
+    privacy_policy: プライバシーポリシー
+    terms_of_service: 利用規約
