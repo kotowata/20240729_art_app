@@ -1,0 +1,5 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert <%= message_type == 'success' ? 'bg-green-200 text-green-600' : (message_type == 'failure' ? 'bg-red-200 text-red-600' : '') %>">
+    <%= message %>
+  </div>
+<% end %>

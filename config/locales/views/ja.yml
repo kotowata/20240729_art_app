@@ -21,9 +21,15 @@ ja:
       login: ログイン
       to_register_page: 登録ページへ
       password_forget: パスワードをお忘れの方はこちら
+    create:
+      success: ログインしました
+      failure: ログインに失敗しました
   users:
     new:
       title: ユーザー登録
+    create:
+      success: ユーザー登録しました
+      failure: ユーザー登録に失敗しました
   header:
     title_logo: (仮)卒業制作APP
     login: ログイン
