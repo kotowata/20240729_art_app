@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :nick_name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
+
+  has_many :posts, dependent: :destroy
 end
