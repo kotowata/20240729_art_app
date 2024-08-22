@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
       user2 = build(:user)
       user2.email = user1.email
       user2.valid?
-      expect(user2.errors[:email]).to include("has already been taken")
+      expect(user2.errors[:email]).to include("はすでに存在します")
     end
 
     it "姓、名、ニックネーム、メールアドレスは必須項目であること" do
@@ -22,10 +22,10 @@ RSpec.describe User, type: :model do
       user.last_name = nil
       user.nick_name = nil
       user.valid?
-      expect(user.errors[:email]).to include("can't be blank")
-      expect(user.errors[:first_name]).to include("can't be blank")
-      expect(user.errors[:last_name]).to include("can't be blank")
-      expect(user.errors[:nick_name]).to include("can't be blank")
+      expect(user.errors[:email]).to include("を入力してください")
+      expect(user.errors[:first_name]).to include("を入力してください")
+      expect(user.errors[:last_name]).to include("を入力してください")
+      expect(user.errors[:nick_name]).to include("を入力してください")
     end
 
     it "姓、名、ニックネームは255文字以下であること" do
@@ -34,9 +34,9 @@ RSpec.describe User, type: :model do
       user.last_name = "b" * 256
       user.nick_name = "c" * 256
       user.valid?
-      expect(user.errors[:first_name]).to include('is too long (maximum is 255 characters)')
-      expect(user.errors[:last_name]).to include('is too long (maximum is 255 characters)')
-      expect(user.errors[:nick_name]).to include('is too long (maximum is 255 characters)')
+      expect(user.errors[:first_name]).to include('は255文字以内で入力してください')
+      expect(user.errors[:last_name]).to include('は255文字以内で入力してください')
+      expect(user.errors[:nick_name]).to include('は255文字以内で入力してください')
     end
   end
 end
