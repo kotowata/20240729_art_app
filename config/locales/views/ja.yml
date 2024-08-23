@@ -1,4 +1,7 @@
 ja:
+  defaults:
+    flash_message:
+      require_login: ログインしてください
   helpers:
     submit:
       login: ログイン
