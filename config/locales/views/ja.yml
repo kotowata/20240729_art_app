@@ -36,7 +36,7 @@ ja:
     title_logo: (仮)卒業制作APP
     login: ログイン
     logout: ログアウト
-    board: 投稿一覧
+    post_index: ポスト一覧
   footer:
     privacy_policy: プライバシーポリシー
     terms_of_service: 利用規約
