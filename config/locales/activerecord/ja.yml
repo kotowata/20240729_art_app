@@ -10,3 +10,8 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
+      post:
+        title: タイトル
+        content: コメント
+        event_url: イベントURL
+        post_image: 写真
