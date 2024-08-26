@@ -20,7 +20,7 @@
           <li><i class="bi bi-person"></i><%= post.user.nick_name %></li>
           <li><i class="bi bi-calendar"></i><%= l post.created_at, format: :short %></li>
         </ul>
-        <p class="mt-2 text-gray-700">本文</p>
+        <p class="mt-2 text-gray-700"><%= post.content %></p>
       </div>
     </div>
   </div>
