@@ -33,7 +33,7 @@ ja:
     new:
       title: ユーザー登録
     create:
-      success: ユーザー登録しました
+      success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
   header:
     title_logo: (仮)卒業制作APP
