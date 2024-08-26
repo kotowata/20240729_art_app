@@ -35,11 +35,15 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+  posts:
+    new:
+      title: 新規投稿
   header:
     title_logo: (仮)卒業制作APP
     login: ログイン
     logout: ログアウト
     post_index: ポスト一覧
+    post_new: 新規投稿
   footer:
     privacy_policy: プライバシーポリシー
     terms_of_service: 利用規約

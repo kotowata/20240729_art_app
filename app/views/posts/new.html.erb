@@ -1,0 +1,22 @@
+<div class="container mx-auto">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="text-center text-2xl font-bold"><%= t('.title') %></h1>
+      <%= form_with model: @post, class: "new_post" do |f| %>
+        <div class="mb-4">
+          <%= f.label :title, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :title, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :content, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_area :content, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500", rows: "10" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :event_url, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.url_field :event_url, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+        </div>
+        <%= f.submit nil, class: "mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded" %>
+      <% end %>
+    </div>
+  </div>
+</div>
