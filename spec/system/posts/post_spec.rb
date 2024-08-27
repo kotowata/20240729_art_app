@@ -53,5 +53,40 @@ RSpec.describe 'ポスト', type: :system do
         end
       end
     end
+
+    describe 'ポストの新規作成' do
+      context 'ログインしていない場合' do
+        it 'ログインページにリダイレクトされること' do
+          visit '/posts/new'
+          Capybara.assert_current_path("/login", ignore_query: true)
+          expect(current_path).to eq('/login'), 'ログインページにリダイレクトされていません'
+          expect(page).to have_content('ログインしてください'), 'フラッシュメッセージ「ログインしてください」が表示されていません'
+        end
+      end
+
+      context 'ログインしている場合' do
+        before do
+          login_as(user)
+          click_on('新規投稿')
+        end
+
+        it 'ポストが作成できること' do
+          fill_in 'タイトル', with: 'テストタイトル'
+          fill_in 'コメント', with: 'テストコメント'
+          fill_in 'イベントURL', with: 'http://example'
+          click_button '登録'
+          Capybara.assert_current_path("/posts", ignore_query: true)
+          expect(page).to have_content('ポストを作成しました'), 'フラッシュメッセージ「ポストを作成しました」が表示されていません'
+          expect(page).to have_content('テストタイトル'), '作成したポストのタイトルが表示されていません'
+          expect(page).to have_content('テストコメント'), '作成したポストのタイトルが表示されていません'
+        end
+
+        it '掲示板の作成に失敗すること' do
+          fill_in 'コメント', with: 'テストコメント'
+          click_button '登録'
+          expect(page).to have_content('ポストを作成できませんでした'), 'フラッシュメッセージ「ポストを作成できませんでした」が表示されていません'
+        end
+      end
+    end
   end
 end
