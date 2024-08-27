@@ -3,6 +3,7 @@
     <div class="w-full mx-auto">
       <h1 class="text-2xl mb-4"><%= t("users.new.title") %></h1>
       <%= form_with model: @user, class: "max-w-md mx-auto" do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="grid md:grid-cols-2 md:gap-6">
           <div class="relative z-0 w-full mb-5 group">
             <%= f.text_field :first_name, id: "first_name", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " ", required: true %>
