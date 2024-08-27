@@ -21,16 +21,18 @@ RSpec.describe 'ユーザー登録', type: :system do
   context '入力情報異常系' do
     it 'ユーザーが新規作成できない' do
       visit '/users/new'
+
+      page.execute_script("document.querySelector('form').setAttribute('novalidate', 'novalidate')")
+      
       expect {
-        fill_in 'first_name', with: 'a'
-        fill_in 'last_name', with: 'a'
-        fill_in 'nick_name', with: 'a'
         fill_in 'email', with: 'example@example.com'
-        fill_in 'password', with: 'a'
-        fill_in 'password_confirmation', with: 'a'
         click_button '登録'
       }.to change { User.count }.by(0)
       expect(page).to have_content('ユーザー登録に失敗しました'), 'フラッシュメッセージ「ユーザー登録に失敗しました」が表示されていません'
+      expect(page).to have_content('姓を入力してください'), 'エラーメッセージ「姓を入力してください」が表示されていません'
+      expect(page).to have_content('名を入力してください'), 'フラッシュメッセージ「名を入力してください」が表示されていません'
+      expect(page).to have_content('ニックネームを入力してください'), 'フラッシュメッセージ「ニックネームを入力してください」が表示されていません'
+      expect(page).to have_content('パスワードは3文字以上で入力してください'), 'フラッシュメッセージ「パスワードは3文字以上で入力してください」が表示されていません'
     end
   end
 end
