@@ -15,7 +15,7 @@ class PostsController < ApplicationController
       redirect_to posts_path, success: t("defaults.flash_message.created", item: Post.model_name.human)
     else
       flash.now[:danger] = t("defaults.flash_message.not_created", item: Post.model_name.human)
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
