@@ -23,7 +23,7 @@ RSpec.describe 'ユーザー登録', type: :system do
       visit '/users/new'
 
       page.execute_script("document.querySelector('form').setAttribute('novalidate', 'novalidate')")
-      
+
       expect {
         fill_in 'email', with: 'example@example.com'
         click_button '登録'

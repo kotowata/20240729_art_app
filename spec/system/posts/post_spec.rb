@@ -81,7 +81,7 @@ RSpec.describe 'ポスト', type: :system do
           expect(page).to have_content('テストコメント'), '作成したポストのタイトルが表示されていません'
         end
 
-        it '掲示板の作成に失敗すること' do
+        it 'ポストの作成に失敗すること' do
           fill_in 'コメント', with: 'テストコメント'
           click_button '登録'
           expect(page).to have_content('ポストを作成できませんでした'), 'フラッシュメッセージ「ポストを作成できませんでした」が表示されていません'
