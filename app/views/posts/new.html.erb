@@ -4,6 +4,11 @@
       <h1 class="text-center text-2xl font-bold"><%= t('.title') %></h1>
       <%= form_with model: @post, class: "new_post" do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
+        <div class="mb-3">
+          <%= f.label :post_image, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.file_field :post_image, class: "mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-500 focus:border-indigo-500", accept: 'image/*' %>
+          <%= f.hidden_field :post_image_cache %>
+        </div>
         <div class="mb-4">
           <%= f.label :title, class: "block text-sm font-medium text-gray-700" %>
           <%= f.text_field :title, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
