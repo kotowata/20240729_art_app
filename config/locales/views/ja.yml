@@ -40,6 +40,8 @@ ja:
   posts:
     new:
       title: 新規投稿
+    show:
+      title: ポスト詳細
   header:
     title_logo: (仮)卒業制作APP
     login: ログイン
