@@ -4,4 +4,6 @@ class Post < ApplicationRecord
   validates :event_url, length: { maximum: 255 }, format: { with: URI.regexp(%w[http https]), message: "無効なURLです", allow_blank: true }
 
   belongs_to :user
+
+  mount_uploader :post_image, PostImageUploader
 end
