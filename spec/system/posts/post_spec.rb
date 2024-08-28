@@ -103,5 +103,40 @@ RSpec.describe 'ポスト', type: :system do
         end
       end
     end
+    describe 'ポストの詳細' do
+      context 'ログインしていない場合' do
+        it 'ログインページにリダイレクトされること' do
+          visit post_path(post)
+          expect(current_path).to eq login_path
+          expect(page).to have_content 'ログインしてください'
+        end
+      end
+
+      context 'ログインしている場合' do
+        before do
+          post
+          login_as(user)
+        end
+        it 'ポストの詳細が表示されること' do
+          click_on('ポスト一覧')
+          within "#post-id-#{post.id}" do
+            page.find_link(post.title).click
+          end
+          Capybara.assert_current_path("/posts/#{post.id}", ignore_query: true)
+          expect(current_path).to eq("/posts/#{post.id}"), 'ポストのタイトルリンクからポスト詳細画面へ遷移できません'
+          expect(page).to have_content post.title
+          expect(page).to have_content post.user.nick_name
+          expect(page).to have_content post.content
+        end
+        it '正しいタイトルが表示されていること' do
+          click_on('ポスト')
+          click_on('ポスト一覧')
+          within "#post-id-#{post.id}" do
+            page.find_link(post.title).click
+          end
+          expect(page).to have_title("#{post.title} | (仮)卒業制作APP"), 'ポスト詳細ページのタイトルにポストのタイトルが含まれていません。'
+        end
+      end
+    end
   end
 end
