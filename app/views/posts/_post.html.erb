@@ -5,7 +5,7 @@
       <div class="p-4">
         <div class="flex justify-between items-center">
           <h4 class="text-lg font-bold">
-            <%= link_to post.title, post_path(post) %>
+            <%= link_to post.title, post_path(post), class: "text-blue-600 hover:text-blue-800" %>
           <h4>
           <div class='flex space-x-2'>
             <%= link_to '#', id: "button-edit-#{post.id}" do %>
