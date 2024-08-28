@@ -1,5 +1,6 @@
 ja:
   defaults:
+    post: ポスト
     flash_message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
@@ -42,6 +43,8 @@ ja:
       title: 新規投稿
     show:
       title: ポスト詳細
+    index:
+      title: ポスト一覧
   header:
     title_logo: (仮)卒業制作APP
     login: ログイン

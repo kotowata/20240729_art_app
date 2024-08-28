@@ -35,6 +35,12 @@ RSpec.describe 'ポスト', type: :system do
           expect(current_path).to eq('/posts'), 'ヘッダーのリンクからポスト一覧画面へ遷移できません'
         end
 
+        it '正しいタイトルが表示されていること' do
+          login_as(user)
+          click_on('ポスト一覧')
+          expect(page).to have_title("ポスト一覧 | (仮)卒業制作APP"), 'ポスト一覧ページのタイトルに「ポスト一覧 | (仮)卒業制作APP」が含まれていません。'
+        end
+
         context 'ポストが一件もない場合' do
           it '何もない旨のメッセージが表示されること' do
             visit '/posts'
@@ -68,6 +74,10 @@ RSpec.describe 'ポスト', type: :system do
         before do
           login_as(user)
           click_on('新規投稿')
+        end
+
+        it '正しいタイトルが表示されていること' do
+          expect(page).to have_title("新規投稿 | (仮)卒業制作APP"), 'ポスト新規作成ページのタイトルに「新規投稿 | (仮)卒業制作APP」が含まれていません。'
         end
 
         it 'ポストが作成できること' do
