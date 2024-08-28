@@ -71,6 +71,8 @@ RSpec.describe 'ポスト', type: :system do
         end
 
         it 'ポストが作成できること' do
+          file_path = Rails.root.join('spec', 'fixtures', 'example.jpg')
+          attach_file "写真", file_path
           fill_in 'タイトル', with: 'テストタイトル'
           fill_in 'コメント', with: 'テストコメント'
           fill_in 'イベントURL', with: 'http://example'
@@ -82,6 +84,8 @@ RSpec.describe 'ポスト', type: :system do
         end
 
         it 'ポストの作成に失敗すること' do
+          file_path = Rails.root.join('spec', 'fixtures', 'example.txt')
+          attach_file "写真", file_path
           fill_in 'コメント', with: 'テストコメント'
           click_button '登録'
           expect(page).to have_content('ポストを作成できませんでした'), 'フラッシュメッセージ「ポストを作成できませんでした」が表示されていません'
