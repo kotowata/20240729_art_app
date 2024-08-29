@@ -1,10 +1,15 @@
 ja:
   defaults:
+    create: 作成
     post: ポスト
+    delete_confirm: 削除しますか？
     flash_message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
   helpers:
     submit:
       login: ログイン
@@ -45,6 +50,8 @@ ja:
       title: ポスト詳細
     index:
       title: ポスト一覧
+    edit:
+      title: ポスト編集
   header:
     title_logo: (仮)卒業制作APP
     login: ログイン
