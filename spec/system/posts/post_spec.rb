@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'ポスト', type: :system do
   let(:user) { create(:user) }
+  let(:another_user) { create(:user) }
   let(:post) { create(:post, user: user) }
 
   describe 'ポストのCRUD' do
@@ -24,12 +25,8 @@ RSpec.describe 'ポスト', type: :system do
       end
 
       context 'ログインしている場合' do
-        before do
-          login_as(user)
-        end
-
         it 'ヘッダーのリンクからポスト一覧へ遷移できること' do
-          visit root_path
+          login_as(user)
           click_on('ポスト一覧')
           Capybara.assert_current_path("/posts", ignore_query: true)
           expect(current_path).to eq('/posts'), 'ヘッダーのリンクからポスト一覧画面へ遷移できません'
@@ -135,6 +132,81 @@ RSpec.describe 'ポスト', type: :system do
             page.find_link(post.title).click
           end
           expect(page).to have_title("#{post.title} | (仮)卒業制作APP"), 'ポスト詳細ページのタイトルにポストのタイトルが含まれていません。'
+        end
+      end
+    end
+
+    describe 'ポストの更新' do
+      context 'ログインしていない場合' do
+        before { post }
+        it 'ログインページにリダイレクトされること' do
+          visit edit_post_path(post)
+          expect(current_path).to eq('/login'), 'ログインページにリダイレクトされていません'
+          expect(page).to have_content 'ログインしてください'
+        end
+      end
+
+      context 'ログインしている場合' do
+        before do
+          login_as(user)
+          post
+        end
+
+        context '自分のポスト' do
+          it "ポストが更新できること" do
+            click_on 'ポスト一覧'
+            find("#button-edit-#{post.id}").click
+
+            fill_in 'タイトル', with: '編集後テストタイトル'
+            fill_in 'コメント', with: '編集後テストコメント'
+            fill_in 'イベントURL', with: 'http://example_rev00'
+            click_button '更新'
+
+            Capybara.assert_current_path("/posts/#{post.id}", ignore_query: true)
+            expect(current_path).to eq post_path(post)
+            expect(page).to have_content('ポストを更新しました'), 'フラッシュメッセージ「ポストを更新しました」が表示されていません'
+            expect(page).to have_content('編集後テストタイトル'), '更新後のタイトルが表示されていません'
+            expect(page).to have_content('編集後テストコメント'), '更新後のコメントが表示されていません'
+            expect(page).to have_content('http://example_rev00'), '更新後のURLが表示されていません'
+          end
+
+          it 'ポストの更新に失敗すること' do
+            click_on 'ポスト一覧'
+            find("#button-edit-#{post.id}").click
+            fill_in 'タイトル', with: ''
+            fill_in 'コメント', with: '編集後テストコメント'
+            click_button '更新'
+            expect(page).to have_content('ポストを更新できませんでした'), 'フラッシュメッセージ「ポストを更新出来ませんでした」が表示されていません'
+          end
+        end
+
+        context '他人のポスト' do
+          it '編集ボタンが表示されないこと' do
+            login_as(another_user)
+            click_on 'ポスト一覧'
+            expect(page).not_to have_selector("#button-edit-#{post.id}"), '他人のポストに対して編集ボタンが表示されています'
+          end
+        end
+      end
+    end
+
+    describe 'ポストの削除' do
+      before { post }
+      context '自分のポスト' do
+        it 'ポストが削除できること' , js: true do
+          login_as(user)
+          click_on 'ポスト一覧'
+          page.accept_confirm { find("#button-delete-#{post.id}").click }
+          expect(current_path).to eq('/posts'), 'ポスト削除後に、ポストの一覧ページに遷移していません'
+          expect(page).to have_content('ポストを削除しました'), 'フラッシュメッセージ「ポストを削除しました」が表示されていません'
+        end
+      end
+
+      context '他人のポスト' do
+        it '削除ボタンが表示されないこと' do
+          login_as(another_user)
+          visit posts_path
+          expect(page).not_to have_selector("#button-delete-#{post.id}"), '他人のポストに対して削除ボタンが表示されています'
         end
       end
     end
