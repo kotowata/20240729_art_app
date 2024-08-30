@@ -1,4 +1,4 @@
-<% if object.errors.any? %>
+<% if object && object.errors.any? %>
   <div id="error_explanation" class="bg-red-500 text-white p-4 rounded">
     <ul class="list-disc list-inside">
       <% object.errors.each do |error| %>
