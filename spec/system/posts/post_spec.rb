@@ -193,7 +193,7 @@ RSpec.describe 'ポスト', type: :system do
     describe 'ポストの削除' do
       before { post }
       context '自分のポスト' do
-        it 'ポストが削除できること' , js: true do
+        it 'ポストが削除できること', js: true do
           login_as(user)
           click_on 'ポスト一覧'
           page.accept_confirm { find("#button-delete-#{post.id}").click }
