@@ -24,6 +24,9 @@
           <li><i class="bi bi-person"></i><%= post.user.nick_name %></li>
         </ul>
         <p class="mt-2 text-gray-700"><%= post.event_url %></p>
+        <% if post.start_date.present? && post.end_date.present? %>
+          <p class="mt-2 text-gray-700"><%= "#{post.start_date} 〜 #{post.end_date}" %></p>
+        <% end %>
       </div>
     </div>
   </div>

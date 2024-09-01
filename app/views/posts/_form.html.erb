@@ -22,5 +22,17 @@
     <%= f.text_field :event_url, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
   </div>
 
+  <div class="mb-4 flex">
+    <div class="mr-4">
+      <%= f.label :start_date, I18n.t('activerecord.attributes.post.start_date'), class: "block text-sm font-medium text-gray-700" %>
+      <%= f.date_field :start_date, class: "mt-1 block border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    </div>
+
+    <div>
+      <%= f.label :end_date, I18n.t('activerecord.attributes.post.end_date'), class: "block text-sm font-medium text-gray-700" %>
+      <%= f.date_field :end_date, class: "mt-1 block border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    </div>
+  </div>
+
   <%= f.submit nil, class: "btn btn-primary mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" %>
 <% end %>
