@@ -56,6 +56,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
   gem "ransack", "~> 4.2.1"
+  gem "kaminari"
 end
 
 group :development do
