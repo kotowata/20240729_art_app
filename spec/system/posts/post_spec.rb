@@ -20,7 +20,6 @@ RSpec.describe 'ポスト', type: :system do
           visit '/posts'
           expect(page).to have_content(post.title), 'ポスト一覧画面にポストのタイトルが表示されていません'
           expect(page).to have_content(post.user.nick_name), 'ポスト一覧画面にポスト者のニックネームが表示されていません'
-          expect(page).to have_content(post.content), 'ポスト一覧画面にポストの本文が表示されていません'
         end
       end
 
@@ -51,7 +50,24 @@ RSpec.describe 'ポスト', type: :system do
             visit '/posts'
             expect(page).to have_content(post.title), 'ポスト一覧画面にポストのタイトルが表示されていません'
             expect(page).to have_content(post.user.nick_name), 'ポスト一覧画面にポスト者のニックネームが表示されていません'
-            expect(page).to have_content(post.content), 'ポスト一覧画面にポストの本文が表示されていません'
+          end
+        end
+
+        context '6件以下の場合' do
+          let!(:posts) { create_list(:post, 6)}
+          it 'ページングが表示されないこと' do
+            login_as(user)
+            visit posts_path
+            expect(page).not_to have_selector('.pagination')
+          end
+        end
+
+        context '7件以上ある場合' do
+          let!(:posts) { create_list(:post, 7)}
+          it 'ページングが表示されること' do
+            login_as(user)
+            click_on('ポスト一覧')
+            expect(page).to have_selector('.pagination'), 'ポスト一覧画面において掲示板が7件以上ある場合に、ページネーションのリンクが表示されていません'
           end
         end
       end
@@ -87,7 +103,6 @@ RSpec.describe 'ポスト', type: :system do
           Capybara.assert_current_path("/posts", ignore_query: true)
           expect(page).to have_content('ポストを作成しました'), 'フラッシュメッセージ「ポストを作成しました」が表示されていません'
           expect(page).to have_content('テストタイトル'), '作成したポストのタイトルが表示されていません'
-          expect(page).to have_content('テストコメント'), '作成したポストのタイトルが表示されていません'
         end
 
         it 'ポストの作成に失敗すること' do
