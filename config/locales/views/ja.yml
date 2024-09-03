@@ -61,3 +61,9 @@ ja:
   footer:
     privacy_policy: プライバシーポリシー
     terms_of_service: 利用規約
+  pagination:
+    first: "&laquo; 最初"
+    last: "最後 &raquo;"
+    previous: "&lsaquo; 前"
+    next: "次 &rsaquo;"
+    truncate: "&hellip;"
