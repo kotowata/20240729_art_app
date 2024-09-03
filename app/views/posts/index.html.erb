@@ -3,12 +3,7 @@
   <div class="flex">
     <div class="w-full lg:w-10/12 lg:mx-auto">
       <!-- 検索フォーム -->
-      <form>
-        <div class="flex mb-3">
-          <input class="border rounded-l px-4 py-2 w-full" placeholder="検索ワード" type="search"/>
-          <button type="submit" class="bg-blue-500 text-white rounded-r px-4 py-2">検索</button>
-        </div>
-      </form>
+      <%= render 'search_form', q: @q, url: posts_path %>
     </div>
   </div>
   <!-- 掲示板一覧 -->

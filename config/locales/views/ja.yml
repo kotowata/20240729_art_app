@@ -2,6 +2,7 @@ ja:
   defaults:
     create: 作成
     post: ポスト
+    search_word: 検索ワード
     delete_confirm: 削除しますか？
     flash_message:
       require_login: ログインしてください
