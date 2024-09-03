@@ -54,7 +54,7 @@ RSpec.describe 'ポスト', type: :system do
         end
 
         context '6件以下の場合' do
-          let!(:posts) { create_list(:post, 6)}
+          let!(:posts) { create_list(:post, 6) }
           it 'ページングが表示されないこと' do
             login_as(user)
             visit posts_path
@@ -63,7 +63,7 @@ RSpec.describe 'ポスト', type: :system do
         end
 
         context '7件以上ある場合' do
-          let!(:posts) { create_list(:post, 7)}
+          let!(:posts) { create_list(:post, 7) }
           it 'ページングが表示されること' do
             login_as(user)
             click_on('ポスト一覧')
