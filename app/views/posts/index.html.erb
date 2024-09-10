@@ -1,5 +1,5 @@
 <% content_for(:title, t('.title')) %>
-<div class="max-w-4xl mx-auto pt-3">
+<div class="max-w-6xl mx-auto pt-3">
   <div class="flex">
     <div class="w-full lg:w-10/12 lg:mx-auto">
       <!-- 検索フォーム -->
@@ -7,11 +7,11 @@
     </div>
   </div>
   <!-- 掲示板一覧 -->
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap justify-center mt-4">
     <div class="w-full">
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap justify-center">
         <% if @posts.present? %>
-          <%= render @posts %>
+          <%= render @posts, class: "w-64" %>
         <% else %>
           <div class="mb-3 text-gray-600">ポストがありません</div>
         <% end %>

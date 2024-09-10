@@ -9,9 +9,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <script src="https://cdn.tailwindcss.com"></script>
+    <%= stylesheet_link_tag "styles", "data-turbo-track": "reload" %>
   </head>
 
-  <body class="min-h-screen bg-slate-500 mt-24 pb-24">
+  <body class="min-h-screen mt-20 pb-24 grid-background">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
