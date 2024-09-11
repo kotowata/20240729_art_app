@@ -26,7 +26,7 @@ ja:
       password_confirmation: パスワード確認
   static_pages:
     top:
-      title: (仮)卒業制作APP
+      title: ぽすぺたっ
   user_sessions:
     new:
       title: ログイン
@@ -54,7 +54,7 @@ ja:
     edit:
       title: ポスト編集
   header:
-    title_logo: (仮)卒業制作APP
+    title_logo: ぽすぺたっ
     login: ログイン
     logout: ログアウト
     post_index: ポスト一覧

@@ -1,10 +1,9 @@
 <header>
-  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+  <nav class="bg-white fixed w-full z-20 top-0 start-0 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
     <%= link_to root_path, class: "flex items-center space-x-3 rtl:space-x-reverse" do %>
-      <%= image_tag "robo_rantekun_face_icon.png", class: "h-8", alt: "Flowbite Logo" %>
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><%= t('header.title_logo') %></span>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-cyan-900"><%= t('header.title_logo') %></span>
     <% end %>
 
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">

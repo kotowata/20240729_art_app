@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   mount_uploader :post_image, PostImageUploader
 
   def self.ransackable_attributes(auth_object = nil)
-    [ "title", "content", "start_date", "end_date", "created_at", "updated_at", "user_id" ]
+    [ "title", "content" ]
   end
 
   def self.ransackable_associations(auth_object = nil)
