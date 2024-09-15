@@ -26,7 +26,7 @@ ja:
       password_confirmation: パスワード確認
   static_pages:
     top:
-      title: ぽすぺたっ
+      title: ArtSpotly
   user_sessions:
     new:
       title: ログイン
@@ -55,7 +55,7 @@ ja:
     edit:
       title: ポスト編集
   header:
-    title_logo: ぽすぺたっ
+    title_logo: ArtSpotly
     login: ログイン
     logout: ログアウト
     post_index: ポスト一覧

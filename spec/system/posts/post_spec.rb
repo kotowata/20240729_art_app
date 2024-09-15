@@ -34,7 +34,7 @@ RSpec.describe 'ポスト', type: :system do
         it '正しいタイトルが表示されていること' do
           login_as(user)
           click_on('ポスト一覧')
-          expect(page).to have_title("ポスト一覧 | (仮)卒業制作APP"), 'ポスト一覧ページのタイトルに「ポスト一覧 | (仮)卒業制作APP」が含まれていません。'
+          expect(page).to have_title("ポスト一覧 | ArtSpotly"), 'ポスト一覧ページのタイトルに「ポスト一覧 | ArtSpotly」が含まれていません。'
         end
 
         context 'ポストが一件もない場合' do
@@ -90,7 +90,7 @@ RSpec.describe 'ポスト', type: :system do
         end
 
         it '正しいタイトルが表示されていること' do
-          expect(page).to have_title("新規投稿 | (仮)卒業制作APP"), 'ポスト新規作成ページのタイトルに「新規投稿 | (仮)卒業制作APP」が含まれていません。'
+          expect(page).to have_title("新規投稿 | ArtSpotly"), 'ポスト新規作成ページのタイトルに「新規投稿 | ArtSpotly」が含まれていません。'
         end
 
         it 'ポストが作成できること' do
@@ -146,7 +146,7 @@ RSpec.describe 'ポスト', type: :system do
           within "#post-id-#{post.id}" do
             page.find_link(post.title).click
           end
-          expect(page).to have_title("#{post.title} | (仮)卒業制作APP"), 'ポスト詳細ページのタイトルにポストのタイトルが含まれていません。'
+          expect(page).to have_title("#{post.title} | ArtSpotly"), 'ポスト詳細ページのタイトルにポストのタイトルが含まれていません。'
         end
       end
     end

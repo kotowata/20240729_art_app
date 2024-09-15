@@ -19,7 +19,7 @@ RSpec.describe '共通系', type: :system do
 
     describe 'タイトル' do
       it 'タイトルが正しく表示されていること' do
-        expect(page).to have_title("(仮)卒業制作APP"), 'トップページのタイトルに「(仮)卒業制作APP」が含まれていません。'
+        expect(page).to have_title("ArtSpotly"), 'トップページのタイトルに「ArtSpotly」が含まれていません。'
       end
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe '共通系', type: :system do
     end
     describe 'タイトル' do
       it 'タイトルが正しく表示されていること' do
-        expect(page).to have_title("(仮)卒業制作APP"), 'トップページのタイトルに「(仮)卒業制作APP」が含まれていません。'
+        expect(page).to have_title("ArtSpotly"), 'トップページのタイトルに「ArtSpotly」が含まれていません。'
       end
     end
   end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'ユーザー登録', type: :system do
   it 'ただしタイトルが表示されること' do
     visit '/users/new'
-    expect(page).to have_title("ユーザー登録 | (仮)卒業制作APP"), 'ユーザー登録ページのタイトルに「ユーザー登録 | (仮)卒業制作APP」が含まれていません。'
+    expect(page).to have_title("ユーザー登録 | ArtSpotly"), 'ユーザー登録ページのタイトルに「ユーザー登録 | ArtSpotly」が含まれていません。'
   end
 
   context '入力情報正常系' do
