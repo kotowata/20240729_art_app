@@ -1,5 +1,4 @@
-.grid-background {
-  background-image: linear-gradient(0deg, transparent 15px, rgb(189, 220, 231) 16px),linear-gradient(90deg,  transparent 15px, rgba(173, 216, 230, 1) 16px);
-  background-color: #FFF;
-  background-size: 16px 16px;
+.haikeigazou {
+  background-image: url(background.jpg);
+  background-size:cover;
 }
