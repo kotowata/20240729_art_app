@@ -18,8 +18,6 @@ ja:
       submit: 保存
       update: 更新
     label:
-      first_name: 名
-      last_name: 姓
       nick_name: ニックネーム
       email: メールアドレス
       password: パスワード
