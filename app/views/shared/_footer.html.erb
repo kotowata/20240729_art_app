@@ -2,10 +2,10 @@
   <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">Copyright © 2019. RUNTEQ</span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
       <li>
-        <a href="#" class="hover:underline me-4 md:me-6"><%= t('footer.privacy_policy') %></a>
+        <%= link_to t('footer.privacy_policy'), page_path('privacy_policy'), class: "hover:underline me-4 md:me-6" %>
       </li>
       <li>
-        <a href="#" class="hover:underline me-4 md:me-6"><%= t('footer.terms_of_service') %></a>
+        <%= link_to t('footer.terms_of_service'), page_path('terms_of_service'), class: "hover:underline me-4 md:me-6" %>
       </li>
     </ul>
 </footer>
