@@ -1,38 +1,42 @@
-<%= form_with model: @post do |f| %>
+<%= form_with model: @post, class: "pt-6 pb-8" do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
   <div class="mb-4">
-    <%= f.label :post_image, I18n.t('activerecord.attributes.post.post_image'), class: "block text-sm font-medium text-gray-700" %>
-    <%= f.file_field :post_image, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500", accept: 'image/*' %>
+    <%= f.label :title, I18n.t('activerecord.attributes.post.title'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :content, I18n.t('activerecord.attributes.post.content'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.text_area :content, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", rows: "10" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :event_url, I18n.t('activerecord.attributes.post.event_url'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.text_field :event_url, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex">
+    <div class="mr-4">
+      <%= f.label :start_date, I18n.t('activerecord.attributes.post.start_date'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= f.date_field :start_date, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :end_date, I18n.t('activerecord.attributes.post.end_date'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= f.date_field :end_date, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <%= f.label :post_image, I18n.t('activerecord.attributes.post.post_image'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.file_field :post_image, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", accept: 'image/*' %>
     <%= f.hidden_field :post_image_cache %>
   </div>
 
-  <div class="mb-4">
-    <%= f.label :title, I18n.t('activerecord.attributes.post.title'), class: "block text-sm font-medium text-gray-700" %>
-    <%= f.text_field :title, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+  <div class="flex items-center justify-between">
+    <%= f.submit nil, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
   </div>
 
-  <div class="mb-4">
-    <%= f.label :content, I18n.t('activerecord.attributes.post.content'), class: "block text-sm font-medium text-gray-700" %>
-    <%= f.text_area :content, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500", rows: "10" %>
-  </div>
 
-  <div class="mb-4">
-    <%= f.label :event_url, I18n.t('activerecord.attributes.post.event_url'), class: "block text-sm font-medium text-gray-700" %>
-    <%= f.text_field :event_url, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
-  </div>
-
-  <div class="mb-4 flex">
-    <div class="mr-4">
-      <%= f.label :start_date, I18n.t('activerecord.attributes.post.start_date'), class: "block text-sm font-medium text-gray-700" %>
-      <%= f.date_field :start_date, class: "mt-1 block border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
-    </div>
-
-    <div>
-      <%= f.label :end_date, I18n.t('activerecord.attributes.post.end_date'), class: "block text-sm font-medium text-gray-700" %>
-      <%= f.date_field :end_date, class: "mt-1 block border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
-    </div>
-  </div>
-
-  <%= f.submit nil, class: "btn btn-primary mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" %>
 <% end %>
