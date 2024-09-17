@@ -1,16 +1,16 @@
 <% content_for(:title, @post.title) %>
-<div class="max-w-screen-lg mx-auto p-4 min-h-screen">
-  <div class="flex flex-col md:flex-row md:space-x-4 ">
-    <!-- 投稿写真カード -->
+<div class="max-w-screen-lg mx-auto p-5 min-h-screen">
+  <div class="flex flex-col md:flex-row md:space-x-4 mt-4">
+    <!-- 投稿写真 -->
     <div class="flex-1 mb-4 md:mb-0">
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="bg-white shadow-lg overflow-hidden">
         <%= image_tag @post.post_image_url, class: "w-full h-auto" %>
       </div>
     </div>
 
-    <!-- 投稿タイトル＆投稿文カード -->
+    <!-- 投稿情報カード -->
     <div class="flex-1 md:mt-16">
-      <div class="bg-white shadow-lg p-4 text-center">
+      <div class="bg-white shadow-lg p-4 text-center mx-4">
         <h1 class="text-2xl border-b-2 border-neutral-600 font-bold pb-2 mb-2"><%= @post.title %></h1>
         <div class="space-x-2 text-sm text-gray-600 mt-2">
           <%= "#{@post.start_date} 〜 #{@post.end_date}" %>
