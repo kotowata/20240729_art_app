@@ -43,6 +43,7 @@ gem "ransack", "~> 4.2.1"
 gem "kaminari"
 gem "high_voltage", "~> 4.0.0"
 gem "fog-aws"
+gem "dotenv-rails", groups: %i[development test]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
