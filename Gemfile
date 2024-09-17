@@ -42,6 +42,7 @@ gem "carrierwave", "~> 2.2.2"
 gem "ransack", "~> 4.2.1"
 gem "kaminari"
 gem "high_voltage", "~> 4.0.0"
+gem "fog-aws"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
