@@ -19,19 +19,20 @@
             <%= "#{@post.start_date} 〜" %>
           <% elsif @post.start_date.nil? && @post.end_date.present? %>
             <%= "〜 #{@post.end_date}" %>
-          <% end %>        </div>
+          <% end %>
+        </div>
         <div class="space-x-2 text-sm text-gray-600 mt-1">
           <% if @post.prefecture.nil? || @post.prefecture_id == 1 %>
             <%= @post.user.nick_name %>
           <% else %>
-            <%= "#{@post.user.nick_name} / #{@post.prefecture.name}" %>
+            <%= "#{@post.user.nick_name} | #{@post.prefecture.name}" %>
           <% end %>
         </div>
         <div class="space-x-2 text-gray-600 mt-1">
           <%= @post.content %>
         </div>
         <div class="space-x-2 text-sm text-gray-600 mt-2">
-          <%= @post.event_url %>
+          <%= link_to @post.event_url, @post.event_url, target: "_blank", class: "hover:text-blue-600" %>
         </div>
 
       </div>
