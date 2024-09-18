@@ -1,9 +1,11 @@
 <% content_for(:title, t('.title')) %>
 <div class="max-w-6xl mx-auto mt-3 pt-5 min-h-screen">
   <div class="flex">
-    <div class="w-full lg:w-10/12 lg:mx-auto">
+    <div class="flex w-full lg:w-10/12 lg:mx-auto">
       <!-- 検索フォーム -->
-      <%= render 'search_form', q: @q, url: posts_path %>
+      <%= render 'search_form', q: @q, url: posts_path, class: "mx-2" %>
+      <%= link_to '開催中のイベントを見る', posts_path(status: 'ongoing'), class: 'btn btn-primary ml-2' %>
+      <%= link_to '全て表示', posts_path(status: 'all'), class: 'btn btn-primary ml-2' %>
     </div>
   </div>
   <!-- 掲示板一覧 -->

@@ -3,7 +3,15 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(12)
+    today = Date.today
+
+    if params[:status] == 'ongoing'
+      @posts = @q.result.where('start_date <= ? AND end_date >= ?', today, today).page(params[:page]).per(12)
+    elsif params[:status] == 'all'
+      @posts = @q.result.distinct(true).includes(:user).order(created_at: :desc).page(params[:page]).per(12)
+    else
+      @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(12)
+    end
   end
 
   def new
