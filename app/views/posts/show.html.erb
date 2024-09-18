@@ -13,10 +13,19 @@
       <div class="bg-white shadow-lg p-4 text-center mx-4">
         <h1 class="text-2xl border-b-2 border-neutral-600 font-bold pb-2 mb-2"><%= @post.title %></h1>
         <div class="space-x-2 text-sm text-gray-600 mt-2">
-          <%= "#{@post.start_date} 〜 #{@post.end_date}" %>
-        </div>
+          <% if @post.start_date.present? && @post.end_date.present? %>
+            <%= "#{@post.start_date} 〜 #{@post.end_date}" %>
+          <% elsif @post.start_date.present? && @post.end_date.nil? %>
+            <%= "#{@post.start_date} 〜" %>
+          <% elsif @post.start_date.nil? && @post.end_date.present? %>
+            <%= "〜 #{@post.end_date}" %>
+          <% end %>        </div>
         <div class="space-x-2 text-sm text-gray-600 mt-1">
-          <%= @post.user.nick_name %>
+          <% if @post.prefecture.nil? || @post.prefecture_id == 1 %>
+            <%= @post.user.nick_name %>
+          <% else %>
+            <%= "#{@post.user.nick_name} / #{@post.prefecture.name}" %>
+          <% end %>
         </div>
         <div class="space-x-2 text-gray-600 mt-1">
           <%= @post.content %>

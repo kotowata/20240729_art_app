@@ -16,6 +16,11 @@
     <%= f.text_field :event_url, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
   </div>
 
+  <div class="mb-4">
+    <%= f.label :prefecture_id, I18n.t('activerecord.attributes.post.prefecture_id'), class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { prompt: '選択してください' }, { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" }) %>
+  </div>
+  
   <div class="flex">
     <div class="mr-4">
       <%= f.label :start_date, I18n.t('activerecord.attributes.post.start_date'), class: "block text-gray-700 text-sm font-bold mb-2" %>
@@ -28,7 +33,7 @@
     </div>
   </div>
 
-  <div class="mb-6">
+  <div class="mb-4">
     <%= f.label :post_image, I18n.t('activerecord.attributes.post.post_image'), class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= f.file_field :post_image, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", accept: 'image/*' %>
     <%= f.hidden_field :post_image_cache %>

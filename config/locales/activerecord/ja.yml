@@ -17,3 +17,4 @@ ja:
         post_image: 写真
         start_date: 開始日
         end_date: 終了日
+        prefecture_id: 所在地
