@@ -5,9 +5,9 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     today = Date.today
 
-    if params[:status] == 'ongoing'
-      @posts = @q.result.where('start_date <= ? AND end_date >= ?', today, today).page(params[:page]).per(12)
-    elsif params[:status] == 'all'
+    if params[:status] == "ongoing"
+      @posts = @q.result.where("start_date <= ? AND end_date >= ?", today, today).page(params[:page]).per(12)
+    elsif params[:status] == "all"
       @posts = @q.result.distinct(true).includes(:user).order(created_at: :desc).page(params[:page]).per(12)
     else
       @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page]).per(12)
