@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :prefecture, class_name: 'Prefecture'
+  belongs_to :prefecture, class_name: "Prefecture"
 
   mount_uploader :post_image, PostImageUploader
 
