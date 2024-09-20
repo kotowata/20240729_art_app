@@ -10,6 +10,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <script src="https://cdn.tailwindcss.com"></script>
     <%= stylesheet_link_tag "styles", "data-turbo-track": "reload" %>
+
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body class="min-h-screen haikeigazou">
