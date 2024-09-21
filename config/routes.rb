@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "static_pages#top"
-  get 'terms', to: 'static_pages#terms'
-  get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get "terms", to: "static_pages#terms"
+  get "privacy_policy", to: "static_pages#privacy_policy"
 
   resources :users, only: %i[new create]
   resources :posts, only: %i[index new create show edit update destroy]
