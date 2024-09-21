@@ -41,7 +41,6 @@ gem "rails-i18n", "~> 7.0.0"
 gem "carrierwave", "~> 3.0"
 gem "ransack", "~> 4.2.1"
 gem "kaminari"
-gem "high_voltage", "~> 4.0.0"
 gem "fog-aws"
 gem "dotenv-rails", groups: %i[development test]
 gem "active_hash"
