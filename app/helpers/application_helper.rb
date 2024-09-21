@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: "Pluspo",
+      site: "ArtSpotly",
       title: "アートを楽しむためのアプリ",
       reverse: true,
       charset: "utf-8",
