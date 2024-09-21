@@ -58,9 +58,10 @@ ja:
     logout: ログアウト
     post_index: ポスト一覧
     post_new: 新規投稿
+    my_page: マイページ
   footer:
     privacy_policy: プライバシーポリシー
-    terms_of_service: 利用規約
+    terms: 利用規約
   pagination:
     first: "&laquo; 最初"
     last: "最後 &raquo;"
@@ -69,5 +70,5 @@ ja:
     truncate: "&hellip;"
   privacy_policy:
     title: プライバシーポリシー
-  terms_of_service:
+  terms:
     title: 利用規約
