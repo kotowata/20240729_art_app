@@ -8,12 +8,15 @@ RSpec.describe '共通系', type: :system do
     describe 'ヘッダー' do
       it 'ヘッダーが正しく表示されていること' do
         expect(page).to have_content('ログイン'), 'ヘッダーに「ログイン」というテキストが表示されていません'
+        expect(page).to have_content('ポスト一覧'), 'ヘッダーに「ポスト一覧」というテキストが表示されていません'
       end
     end
 
     describe 'フッター' do
       it 'フッターが正しく表示されていること' do
-        expect(page).to have_content('Copyright'), '「Copyright」というテキストが表示されていません'
+        expect(page).to have_content('Copyright © 2024. ArtSpotly All Rights Reserved.'), '「Copyright © 2024. ArtSpotly All Rights Reserved.」というテキストが表示されていません'
+        expect(page).to have_content('プライバシーポリシー'), '「プライバシーポリシー」というテキストが表示されていません'
+        expect(page).to have_content('利用規約'), '「利用規約」というテキストが表示されていません'
       end
     end
 
