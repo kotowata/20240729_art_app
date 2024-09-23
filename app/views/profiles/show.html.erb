@@ -1,0 +1,28 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mx-auto pt-5 min-h-screen">
+  <div class="mb-3 mt-4">
+    <div class="w-full lg:w-8/12 lg:mx-auto">
+      <h1 class="text-2xl mb-4 text-center"><%= t('.title') %></h1>
+      <div class="bg-white shadow-md rounded-lg">
+        <div class="p-4">
+
+
+          <div class="flex justify-between items-start mb-4">
+            <div class="flex flex-col items-center">
+              <%= image_tag current_user.user_icon_url, class: 'w-16 h-16 rounded-full border' %>
+            </div>
+            <%= link_to '編集', edit_profile_path, class: 'btn btn-primary' %>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg w-full">
+            <p class="mb-1">ニックネーム： <span class="ml-2"><%= current_user.nick_name %></span></p>
+            <p class="mb-1">メールアドレス： <span class="ml-2"><%= current_user.email %></span></p>
+            <p>投稿した数: ○○件</p>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

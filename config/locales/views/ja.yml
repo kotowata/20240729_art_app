@@ -52,6 +52,11 @@ ja:
       title: ポスト一覧
     edit:
       title: ポスト編集
+  profiles:
+    show:
+      title: プロフィール
+    edit:
+      title: プロフィール編集
   header:
     title_logo: ArtSpotly
     login: ログイン
@@ -59,6 +64,7 @@ ja:
     post_index: ポスト一覧
     post_new: 新規投稿
     my_page: マイページ
+    profile: プロフィール
   footer:
     privacy_policy: プライバシーポリシー
     terms: 利用規約
