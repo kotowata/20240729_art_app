@@ -5,9 +5,9 @@ class MypagesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to mypage_path, success: t("defaults.flash_message.updated", item: User.model_name.human)
+      redirect_to mypage_path, success: t("defaults.flash_message.updated", item: "ユーザー情報")
     else
-      flash.now["danger"] = t("defaults.flash_message.not_updated", item: User.model_name.human)
+      flash.now["danger"] = t("defaults.flash_message.not_updated", item: "ユーザー情報")
       render :edit, status: :unprocessable_entity
     end
   end
