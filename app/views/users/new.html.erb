@@ -8,27 +8,27 @@
           <%= render 'shared/error_messages', object: f.object %>
 
           <div class="mb-4">
-            <%= f.label :nick_name, class: "block text-gray-700 text-sm font-bold mb-2", for: "nick_name" %>
+            <%= f.label :nick_name, "#{t('activerecord.attributes.user.nick_name')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "nick_name" %>
             <%= f.text_field :nick_name, id: "nick_name", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
           </div>
 
           <div class="mb-4">
-            <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: "email" %>
+            <%= f.label :email, "#{t('activerecord.attributes.user.email')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "email" %>
             <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
           </div>
 
           <div class="mb-4">
-            <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2", for: "password" %>
+            <%= f.label :password, "#{t('activerecord.attributes.user.password')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "password" %>
             <%= f.text_field :password, id: "password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
           </div>
 
           <div class="mb-4">
-            <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2", for: "password_confirmation" %>
+            <%= f.label :password_confirmation, "#{t('activerecord.attributes.user.password_confirmation')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "password_confirmation" %>
             <%= f.text_field :password_confirmation, id: "password_confirmation", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
           </div>
 
           <div class="mb-6">
-            <%= f.label :user_icon, class: "block text-gray-700 text-sm font-bold mb-2", for: "user_icon" %>
+            <%= f.label :user_icon, "#{t('activerecord.attributes.user.user_icon')} <span class='text-grey-400 font-light'>(任意)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "user_icon" %>
             <%= f.file_field :user_icon, id: "user_icon", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
             <%= f.hidden_field :user_icon_cache %>
           </div>
