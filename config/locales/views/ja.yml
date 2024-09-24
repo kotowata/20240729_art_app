@@ -52,9 +52,9 @@ ja:
       title: ポスト一覧
     edit:
       title: ポスト編集
-  profiles:
+  mypages:
     show:
-      title: プロフィール
+      title: マイページ
     edit:
       title: プロフィール編集
   header:

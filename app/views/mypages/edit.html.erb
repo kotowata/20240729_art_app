@@ -7,7 +7,7 @@
         <div class="p-4">
           <div class="flex flex-col items-center">
 
-            <%= form_with model: @user, url: profile_path, method: :put, class: "pt-6 pb-8" do |f| %>
+            <%= form_with model: @user, url: mypage_path, method: :put, class: "pt-6 pb-8" do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
 
               <div class="mb-4">
