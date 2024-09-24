@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "privacy_policy", to: "static_pages#privacy_policy"
 
   resources :users, only: %i[new create]
+  get "my_posts", to: "users#my_posts"
   resources :posts, only: %i[index new create show edit update destroy]
   resource :mypage, only: %i[show edit update]
   get "login", to: "user_sessions#new"

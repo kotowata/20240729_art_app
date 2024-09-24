@@ -43,6 +43,8 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+    my_posts:
+      title: 自分の投稿一覧
   posts:
     new:
       title: 新規投稿
