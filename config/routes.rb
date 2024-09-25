@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
   get "terms", to: "static_pages#terms"
   get "privacy_policy", to: "static_pages#privacy_policy"
+  get "map", to: "static_pages#map"
 
   resources :users, only: %i[new create]
   get "my_posts", to: "users#my_posts"

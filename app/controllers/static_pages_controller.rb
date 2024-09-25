@@ -6,4 +6,6 @@ class StaticPagesController < ApplicationController
   def privacy_policy; end
 
   def terms; end
+
+  def map; end
 end
