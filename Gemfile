@@ -42,7 +42,7 @@ gem "carrierwave", "~> 3.0"
 gem "ransack", "~> 4.2.1"
 gem "kaminari"
 gem "fog-aws"
-gem "dotenv-rails", groups: %i[development test]
+gem "dotenv-rails"
 gem "active_hash"
 gem "meta-tags"
 
