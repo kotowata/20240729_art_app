@@ -16,6 +16,7 @@
 
     // 地図を指定した要素に表示
     const map = new google.maps.Map(document.getElementById('map'), defaultMapOptions);
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         // 現在の緯度経度を取得
@@ -28,16 +29,57 @@
         // マーカーを現在地に表示
         new google.maps.Marker({
           position: currentLocation,
-          map: map
+          map: map,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: 'blue',
+            fillOpacity: 1,
+            scale: 10, // 丸の大きさ
+            strokeColor: 'white', // stroke:マーカーの縁
+            strokeWeight: 2
+          }
+        });
+
+        // 美術展を検索するためのPlacesサービスを作成
+        const service = new google.maps.places.PlacesService(map);
+        const request = {
+          location: currentLocation,
+          radius: '10000', // 半径10キロメートル以内を検索
+          keyword: '美術展' // 検索キーワード
+        };
+
+        // 美術展を検索
+        service.nearbySearch(request, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            // 検索結果をマーカーとして表示
+            for (let i = 0; i < results.length; i++) {
+              createMarker(results[i]);
+            }
+          }
         });
       }, function() {
         // 現在地が取得できない場合もデフォルトの地図を表示
         displayMap(defaultMapOptions);
       });
-      } else {
-        // Geolocation APIが利用不可能な場合もデフォルトの地図を表示
-        displayMap(defaultMapOptions);
-      }
+    } else {
+      // Geolocation APIが利用不可能な場合もデフォルトの地図を表示
+      displayMap(defaultMapOptions);
+    }
+
+    // マーカーを作成する関数
+    function createMarker(place) {
+      const marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+
+      // マーカーに情報ウィンドウを追加
+      google.maps.event.addListener(marker, 'click', function() {
+        const infowindow = new google.maps.InfoWindow();
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+      });
+    }
   }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&libraries=places&callback=initMap" async defer></script>
