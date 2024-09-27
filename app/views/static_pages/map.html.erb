@@ -6,17 +6,21 @@
 </div>
 
 <script>
+  let map;
+  // マーカーを管理する配列
+  const markers = [];
+  // 地図のオプション（デフォルト位置：東京）
+  const defaultMapOptions = {
+    center: { lat: 35.6803997, lng: 139.7690174 },
+    zoom: 12 // ズームレベル
+  };
+
   // 地図を初期化する関数
   function initMap() {
-    // 地図のオプション（デフォルト位置：東京）
-    const defaultMapOptions = {
-      center: { lat: 35.6803997, lng: 139.7690174 },
-      zoom: 12 // ズームレベル
-    };
-
     // 地図を指定した要素に表示
-    const map = new google.maps.Map(document.getElementById('map'), defaultMapOptions);
+    map = new google.maps.Map(document.getElementById('map'), defaultMapOptions);
 
+    // 現在地を取得
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         // 現在の緯度経度を取得
@@ -40,46 +44,86 @@
           }
         });
 
-        // 美術展を検索するためのPlacesサービスを作成
-        const service = new google.maps.places.PlacesService(map);
-        const request = {
-          location: currentLocation,
-          radius: '10000', // 半径10キロメートル以内を検索
-          keyword: '美術展' // 検索キーワード
-        };
-
-        // 美術展を検索
-        service.nearbySearch(request, function(results, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            // 検索結果をマーカーとして表示
-            for (let i = 0; i < results.length; i++) {
-              createMarker(results[i]);
-            }
-          }
-        });
+        // 現在地周辺の美術館を検索
+        searchNearbyMuseums(currentLocation);
       }, function() {
-        // 現在地が取得できない場合もデフォルトの地図を表示
+        // 現在地が取得できない場合デフォルトの地図を表示
         displayMap(defaultMapOptions);
       });
     } else {
-      // Geolocation APIが利用不可能な場合もデフォルトの地図を表示
+      // Geolocation APIが利用不可の場合デフォルトの地図を表示
       displayMap(defaultMapOptions);
     }
 
-    // マーカーを作成する関数
-    function createMarker(place) {
-      const marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
+    // 地域名で地図を更新する関数
+    document.getElementById('pac-input').addEventListener('change', function() {
+      const address = this.value;
+      const geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: address }, function(results, status) {
+        if (status === 'OK') {
+          const location = results[0].geometry.location;
+          // 地図の中心を検索結果に設定
+          map.setCenter(location);
+          // 検索した地域周辺の美術館を検索
+          searchNearbyMuseums(location);
+        } else {
+          alert('地名を見つけられませんでした: ' + status);
+        }
       });
+    });
+  }
 
-      // マーカーに情報ウィンドウを追加
-      google.maps.event.addListener(marker, 'click', function() {
-        const infowindow = new google.maps.InfoWindow();
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-      });
+  function displayMap(options) {
+    map.setCenter(options.center);
+    map.setZoom(options.zoom);
+  }
+
+  // 美術館を検索する関数
+  function searchNearbyMuseums(location) {
+    // 直前の検索結果マーカーをクリア
+    clearMarkers();
+
+    const service = new google.maps.places.PlacesService(map);
+    const request = {
+      location: location,
+      // 半径10キロメートル以内を検索
+      radius: '10000',
+      // 検索キーワード
+      keyword: '美術展'
+    };
+    // 美術館を検索
+    service.nearbySearch(request, function(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (let i = 0; i < results.length; i++) {
+          createMarker(results[i]);
+        }
+      }
+    });
+  }
+
+  // マーカーを作成する関数
+  function createMarker(place) {
+    const marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+    // マーカーを配列に追加
+    markers.push(marker);
+
+    // マーカーに情報ウィンドウを追加
+    google.maps.event.addListener(marker, 'click', function() {
+      const infowindow = new google.maps.InfoWindow();
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  }
+
+  function clearMarkers() {
+    // 既存のマーカーを地図から削除
+    for (let i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
     }
+    markers.length = 0; // 配列をクリア
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&libraries=places&callback=initMap" async defer></script>
