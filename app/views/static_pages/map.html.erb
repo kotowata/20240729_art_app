@@ -113,8 +113,15 @@
     // マーカーに情報ウィンドウを追加
     google.maps.event.addListener(marker, 'click', function() {
       const infowindow = new google.maps.InfoWindow();
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
+
+      // 美術館名
+      let content = `<h3>${place.name}</h3>`;
+      // GoogleマップのURL
+      const googleMapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name)}`;
+      content += `<p><a href="${googleMapsURL}" target="_blank" style="color: blue; text-decoration: underline;">Googleマップで見る</a></p>`; // Googleマップへのリン
+
+      infowindow.setContent(content);
+      infowindow.open(map, marker);
     });
   }
 
