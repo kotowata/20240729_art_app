@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path, success: t("defaults.flash_message.created", item: Post.model_name.human)
+      redirect_to post_path(@post), success: t("defaults.flash_message.created", item: Post.model_name.human)
     else
       flash.now[:failure] = t("defaults.flash_message.not_created", item: Post.model_name.human)
       render :new, status: :unprocessable_entity
