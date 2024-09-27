@@ -25,6 +25,8 @@ ja:
   static_pages:
     top:
       title: ArtSpotly
+    map:
+      title: 美術館マップ
   user_sessions:
     new:
       title: ログイン
