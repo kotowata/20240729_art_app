@@ -1,10 +1,116 @@
 <% content_for(:title, t('privacy_policy.title')) %>
-<div class="min-h-screen flex items-center justify-center">
-  <div class="relative spotlight bg-white p-8 rounded-lg overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br to-transparent opacity-60 rounded-l"></div>
-    <h1 class="relative z-10 text-center text-3xl font-bold text-gray-800"><%= t('privacy_policy.title') %></h1>
-    <p class="relative z-10 text-center text-gray-700 mt-4">
-      〜制作中〜
-    </p>
+<div class="min-h-screen flex justify-center my-20">
+  <div class="w-3/4 bg-white p-8 border border-gray-300 shadow-lg rounded-lg">
+
+    <div class="pb-4 mb-8 border-b-2">
+      <h1 class="relative z-10 text-3xl font-bold text-gray-800"><%= t('privacy_policy.title') %></h1>
+    </div>
+
+    <div>
+      <h1 class="font-bold text-2xl">
+        お客様から取得する情報
+      </h1>
+      <div class="m-4">
+        <p>
+          管理者は、お客様から以下の情報を取得します。<br>
+          ・氏名(ニックネームやペンネームも含む)<br>
+          ・メールアドレス<br>
+          ・住所<br>
+          ・写真や動画<br>
+          ・外部サービスでお客様が利用するID、その他外部サービスのプライバシー設定によりお客様が連携先に開示を認めた情報<br>
+          ・Cookie(クッキー)を用いて生成された識別情報<br>
+          ・お客様の位置情報<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h1 class="font-bold text-2xl">
+        お客様の情報を利用する目的
+      </h1>
+      <div class="m-4">
+        <p>
+          管理者は、お客様から取得した情報を、以下の目的のために利用します。<br>
+          ・当社サービスに関する登録の受付、お客様の本人確認、認証のため<br>
+          ・お客様の当社サービスの利用履歴を管理するため<br>
+          ・当社サービスにおけるお客様の行動履歴を分析し、当社サービスの維持改善に役立てるため<br>
+          ・お客様からのお問い合わせに対応するため<br>
+          ・当社の規約や法令に違反する行為に対応するため<br>
+          ・以上の他、当社サービスの提供、維持、保護及び改善のため<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h1 class="font-bold text-2xl">
+        安全管理のために講じた措置
+      </h1>
+      <div class="m-4">
+        <p>
+        管理者が、お客様から取得した情報に関して安全管理のために講じた措置につきましては、末尾記載のお問い合わせ先にご連絡をいただきましたら、法令の定めに従い個別にご回答させていただきます。<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h1 class="font-bold text-2xl">
+        第三者提供
+      </h1>
+      <div class="m-4">
+        <p>
+          管理者は、お客様から取得する情報のうち、個人データ（個人情報保護法第１６条第３項）に該当するものついては、あらかじめお客様の同意を得ずに、第三者（日本国外にある者を含みます。）に提供しません。<br>
+          但し、次の場合は除きます。<br>
+          ・個人データの取扱いを外部に委託する場合<br>
+          ・当社や当社サービスが買収された場合<br>
+          ・事業パートナーと共同利用する場合（具体的な共同利用がある場合は、その内容を別途公表します。）<br>
+          ・その他、法律によって合法的に第三者提供が許されている場合<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h1 class="font-bold text-2xl">
+        アクセス解析ツール
+      </h1>
+      <div class="m-4">
+        <p>
+          管理者は、お客様のアクセス解析のために、「Googleアナリティクス」を利用しています。Googleアナリティクスは、トラフィックデータの収集のためにCookieを使用しています。<br>
+          トラフィックデータは匿名で収集されており、個人を特定するものではありません。Cookieを無効にすれば、これらの情報の収集を拒否することができます。<br>
+          詳しくはお使いのブラウザの設定をご確認ください。Googleアナリティクスについて、詳しくは以下からご確認ください。<br>
+          <%= link_to "https://marketingplatform.google.com/about/analytics/terms/jp/", "https://marketingplatform.google.com/about/analytics/terms/jp/", class: "link link-info" %><br>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h1 class="font-bold text-2xl">
+        プライバシーポリシーの変更
+      </h1>
+      <div class="m-4">
+        <p>
+          管理者は、必要に応じて、このプライバシーポリシーの内容を変更します。この場合、変更後のプライバシーポリシーの施行時期と内容を適切な方法により周知または通知します。<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h1 class="font-bold text-2xl">
+        お問い合わせ
+      </h1>
+      <div class="m-4">
+        <p>
+          お客様の情報の開示、情報の訂正、利用停止、削除をご希望の場合は、以下のお問い合わせフォームにご連絡ください。<br>
+          <%= link_to "お問い合わせフォーム", "https://forms.gle/jEgH9sfuiRov9PFW9", class: "link link-info" %><br>
+          この場合、必ず、運転免許証のご提示等当社が指定する方法により、ご本人からのご請求であることの確認をさせていただきます。<br>
+          なお、情報の開示請求については、開示の有無に関わらず、ご申請時に一件あたり1,000円の事務手数料を申し受けます。
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <p>
+        2024年09月27日 制定
+      </p>
+    </div>
   </div>
 </div>
