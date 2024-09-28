@@ -8,9 +8,9 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/assets/builds/application.css" rel="stylesheet">
     <%= stylesheet_link_tag "styles", "data-turbo-track": "reload" %>
-
+    <%= favicon_link_tag("favicon.ico") %>
     <%= display_meta_tags(default_meta_tags) %>
   </head>
 
