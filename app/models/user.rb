@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :posts, dependent: :destroy
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
 
   mount_uploader :user_icon, UserIconUploader
 
