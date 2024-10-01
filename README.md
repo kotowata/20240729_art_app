@@ -1,12 +1,4 @@
-# 20240729_art_app
-
-### 画面遷移図
-Figma：https://www.figma.com/design/m8NSla9F8igoj9aAnLWSbJ/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_rev1?node-id=0-1&t=ig0lTzq7U6TB9yCh-1
-<br>
-
-### ER図
-Draw.io：https://drive.google.com/file/d/1l5MBVvzUgPHwV4Kf-2PAVhCRNDRjmqCY/view
-<br>
+# ArtSpotly
 
 ### ■サービス概要
 訪れた美術館（展覧会）のポスター写真を投稿・閲覧ができるアプリです。<br>
@@ -92,9 +84,15 @@ letter_opener_web<br>
 Vibrant.js<br>
 ColorThief<br>
 <br>
-画像利用参照元：https://www.metmuseum.org/ja/about-the-met/policies-and-documents/open-access<br>
-アイコン：heroicons<br>
-<br>
 
 **デプロイに使用するサービス：**<br>
-Render.com<br>
+Render.com
+<br>
+
+### 画面遷移図
+Figma：https://www.figma.com/design/m8NSla9F8igoj9aAnLWSbJ/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_rev1?node-id=0-1&t=ig0lTzq7U6TB9yCh-1
+<br>
+
+### ER図
+Draw.io：https://drive.google.com/file/d/1l5MBVvzUgPHwV4Kf-2PAVhCRNDRjmqCY/view
+<br>
