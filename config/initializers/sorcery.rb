@@ -161,7 +161,7 @@ Rails.application.config.sorcery.configure do |config|
   config.google.key = Rails.application.credentials.dig(:google, :google_client_id)
   config.google.secret = Rails.application.credentials.dig(:google, :google_client_secret)
   if Rails.env.test?
-    config.google.callback_url = 'http://localhost:3000/test_callback'
+    config.google.callback_url = "http://localhost:3000/test_callback"
   else
     config.google.callback_url = Settings.sorcery[:google_callback_url]
   end
