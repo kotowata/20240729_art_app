@@ -53,8 +53,8 @@ RSpec.describe 'ポスト', type: :system do
           end
         end
 
-        context '6件以下の場合' do
-          let!(:posts) { create_list(:post, 6) }
+        context '12件以下の場合' do
+          let!(:posts) { create_list(:post, 12) }
           it 'ページングが表示されないこと' do
             login_as(user)
             visit posts_path
@@ -62,12 +62,12 @@ RSpec.describe 'ポスト', type: :system do
           end
         end
 
-        context '7件以上ある場合' do
-          let!(:posts) { create_list(:post, 7) }
+        context '13件以上ある場合' do
+          let!(:posts) { create_list(:post, 13) }
           it 'ページングが表示されること' do
             login_as(user)
             click_on('ポスト一覧')
-            expect(page).to have_selector('.pagination'), 'ポスト一覧画面において掲示板が7件以上ある場合に、ページネーションのリンクが表示されていません'
+            expect(page).to have_selector('.pagination'), 'ポスト一覧画面において掲示板が13件以上ある場合に、ページネーションのリンクが表示されていません'
           end
         end
       end
@@ -99,10 +99,22 @@ RSpec.describe 'ポスト', type: :system do
           fill_in 'タイトル', with: 'テストタイトル'
           fill_in 'コメント', with: 'テストコメント'
           fill_in 'イベントURL', with: 'http://example'
+          select '東京都', from: 'post[prefecture_id]'
+          fill_in 'post[start_date]', with: Date.new(2024, 9, 1)
+          fill_in 'post[end_date]', with: Date.new(2024, 9, 30)
           click_button '登録'
-          Capybara.assert_current_path("/posts", ignore_query: true)
+
           expect(page).to have_content('ポストを作成しました'), 'フラッシュメッセージ「ポストを作成しました」が表示されていません'
+          post = Post.last
+          Capybara.assert_current_path("/posts/#{post.id}", ignore_query: true)
+
           expect(page).to have_content('テストタイトル'), '作成したポストのタイトルが表示されていません'
+          expect(page).to have_content('テストコメント'), '作成したポストのコメントが表示されていません'
+          expect(page).to have_content('http://example'), '作成したポストのイベントURLが表示されていません'
+          expect(page).to have_content('東京都'), '作成したポストの場所が表示されていません'
+          expect(page).to have_content('2024-09-01'), '作成したポストの開始日が表示されていません'
+          expect(page).to have_content('2024-09-30'), '作成したポストの終了日が表示されていません'
+          expect(page).to have_css("img[src*='example.jpg']"), '画像が表示されていません'
         end
 
         it 'ポストの作成に失敗すること' do
@@ -132,13 +144,18 @@ RSpec.describe 'ポスト', type: :system do
         it 'ポストの詳細が表示されること' do
           click_on('ポスト一覧')
           within "#post-id-#{post.id}" do
-            page.find_link(post.title).click
+            post_image_src = post.post_image_url
+            page.find("img[src^='#{post_image_src.split('-').first}']").click
           end
           Capybara.assert_current_path("/posts/#{post.id}", ignore_query: true)
-          expect(current_path).to eq("/posts/#{post.id}"), 'ポストのタイトルリンクからポスト詳細画面へ遷移できません'
-          expect(page).to have_content post.title
-          expect(page).to have_content post.user.nick_name
-          expect(page).to have_content post.content
+          expect(current_path).to eq("/posts/#{post.id}"), '画像リンクからポスト詳細画面へ遷移できません'
+          expect(page).to have_content post.title, 'ポストのタイトルが表示されていません'
+          expect(page).to have_content post.user.nick_name, 'ポストの作者が表示されていません'
+          expect(page).to have_content post.event_url, 'ポストのイベントURLが表示されていません'
+          expect(page).to have_content post.start_date, 'ポストのイベント開始日が表示されていません'
+          expect(page).to have_content post.end_date, 'ポストのイベント終了日が表示されていません'
+          expect(page).to have_content post.prefecture.name, 'ポストの場所が表示されていません'
+          expect(page).to have_content post.content, 'ポストのコメントが表示されていません'
         end
         it '正しいタイトルが表示されていること' do
           click_on('ポスト')
@@ -171,18 +188,26 @@ RSpec.describe 'ポスト', type: :system do
           it "ポストが更新できること" do
             click_on 'ポスト一覧'
             find("#button-edit-#{post.id}").click
-
+            file_path = Rails.root.join('spec', 'fixtures', 'post_placeholder.png')
+            attach_file "写真", file_path
             fill_in 'タイトル', with: '編集後テストタイトル'
             fill_in 'コメント', with: '編集後テストコメント'
-            fill_in 'イベントURL', with: 'http://example_rev00'
+            fill_in 'イベントURL', with: 'http://example_edited'
+            select '北海道', from: 'post[prefecture_id]'
+            fill_in 'post[start_date]', with: Date.new(2000, 1, 1)
+            fill_in 'post[end_date]', with: Date.new(2000, 12, 31)
             click_button '更新'
 
+            expect(page).to have_content('ポストを更新しました'), 'フラッシュメッセージ「ポストを更新しました」が表示されていません'
             Capybara.assert_current_path("/posts/#{post.id}", ignore_query: true)
             expect(current_path).to eq post_path(post)
-            expect(page).to have_content('ポストを更新しました'), 'フラッシュメッセージ「ポストを更新しました」が表示されていません'
             expect(page).to have_content('編集後テストタイトル'), '更新後のタイトルが表示されていません'
             expect(page).to have_content('編集後テストコメント'), '更新後のコメントが表示されていません'
-            expect(page).to have_content('http://example_rev00'), '更新後のURLが表示されていません'
+            expect(page).to have_content('http://example_edited'), '更新後のURLが表示されていません'
+            expect(page).to have_content('北海道'), '更新後の場所が表示されていません'
+            expect(page).to have_content('2000-01-01'), '更新後の開始日が表示されていません'
+            expect(page).to have_content('2000-12-31'), '更新後の終了日が表示されていません'
+            expect(page).to have_css("img[src*='post_placeholder.png']"), '画像が表示されていません'
           end
 
           it 'ポストの更新に失敗すること' do
