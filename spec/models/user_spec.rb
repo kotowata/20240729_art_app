@@ -36,6 +36,5 @@ RSpec.describe User, type: :model do
       expect(user).to be_invalid
       expect(user.errors[:email]).to include("は不正な値です")
     end
-
   end
 end
