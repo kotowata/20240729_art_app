@@ -40,6 +40,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
         login_as(user)
       end
       it 'ログアウトできること' do
+        find('.dropdown div[role="button"]').click
         click_on('ログアウト')
         Capybara.assert_current_path("/", ignore_query: true)
         expect(current_path).to eq root_path
