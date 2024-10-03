@@ -30,5 +30,12 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors[:nick_name]).to include('は255文字以内で入力してください')
     end
+
+    it "メールアドレスの形式が有効であること" do
+      user = build(:user, email: "invalid_email")
+      expect(user).to be_invalid
+      expect(user.errors[:email]).to include("は不正な値です")
+    end
+
   end
 end
