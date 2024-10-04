@@ -28,7 +28,7 @@
                   <%= link_to "自分の投稿", my_posts_path %>
                 </li>
                 <li>
-                  <%= link_to "いいねした投稿", "#" %>
+                  <%= link_to "いいねした投稿", likes_posts_path %>
                 </li>
                 <li>
                   <%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete } %>
