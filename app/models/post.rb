@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates :event_url, length: { maximum: 255 }, format: { with: URI.regexp(%w[http https]), message: "無効なURLです", allow_blank: true }
 
   belongs_to :user
-  has_many :likeks, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture, class_name: "Prefecture"
