@@ -25,10 +25,10 @@
                   <%= link_to t('header.profile'), mypage_path %>
                 </li>
                 <li>
-                  <%= link_to "自分の投稿", my_posts_path %>
+                  <%= link_to t('header.my_posts'), my_posts_path %>
                 </li>
                 <li>
-                  <%= link_to "いいねした投稿", likes_posts_path %>
+                  <%= link_to t('header.likes'), likes_posts_path %>
                 </li>
                 <li>
                   <%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete } %>

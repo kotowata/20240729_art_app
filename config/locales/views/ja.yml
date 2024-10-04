@@ -56,6 +56,13 @@ ja:
       title: ポスト一覧
     edit:
       title: ポスト編集
+    likes:
+      title: いいね一覧
+      no_result: いいねしたポストがありません
+    create:
+      success: いいねしました
+    destroy:
+      success: いいねを外しました
   mypages:
     show:
       title: マイページ
@@ -70,6 +77,8 @@ ja:
     map: 探す
     my_page: マイページ
     profile: プロフィール
+    my_posts: 自分の投稿
+    likes: いいねした投稿
   footer:
     privacy_policy: プライバシーポリシー
     terms: 利用規約
