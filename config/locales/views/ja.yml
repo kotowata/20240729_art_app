@@ -59,6 +59,7 @@ ja:
     likes:
       title: いいね一覧
       no_result: いいねしたポストがありません
+  likes:
     create:
       success: いいねしました
     destroy:
