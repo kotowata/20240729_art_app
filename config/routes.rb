@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
   get "my_posts", to: "users#my_posts"
-  resources :posts, only: %i[index new create show edit update destroy]
+  resources :posts, only: %i[index new create show edit update destroy] do
+    collection do
+      get :likes
+    end
+  end
+  resources :likes, only: %i[create destroy]
   resource :mypage, only: %i[show edit update]
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
