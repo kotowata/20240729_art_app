@@ -25,6 +25,8 @@
                 </svg>
               <% end %>
             </div>
+          <% else %>
+            <%= render 'like_buttons', { post: post } %>
           <% end %>
         </ul>
       </div>
