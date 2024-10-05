@@ -55,13 +55,14 @@ mvpリリースまで<br>
 <br>
 
 ### ■ 機能の実装方針予定
-**フロントエンド：**<br>
-HTML/CSS<br>
-JavaScript<br>
-<br>
-
-**バックエンド：**<br>
-Ruby on Rails<br>
+| カテゴリ | 技術 |
+----|----
+| フロントエンド | HTML, CSS, Tailwind CSS, daisyUI |
+| バックエンド | Ruby 3.2.3, Rails 7.2.1 |
+| データベース | PostgreSQL |
+| 開発環境 | macOS, Docker |
+| インフラ | Render.com, Amazon S3 |
+| CI/CL | GitHubActions |
 <br>
 
 **現時点で想定してるgemやライブラリ：**<br>
@@ -83,10 +84,6 @@ letter_opener_web<br>
 <br>
 Vibrant.js<br>
 ColorThief<br>
-<br>
-
-**デプロイに使用するサービス：**<br>
-Render.com
 <br>
 
 ### 画面遷移図
