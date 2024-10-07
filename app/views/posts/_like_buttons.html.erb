@@ -1,5 +1,5 @@
 <div class="ml-auto">
-  <% if current_user.like?(post) %>
+  <% if current_user && current_user.like?(post) %>
     <%= render 'unlike', { post: post } %>
   <% else %>
     <%= render 'like', { post: post } %>
