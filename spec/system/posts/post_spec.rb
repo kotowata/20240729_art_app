@@ -250,5 +250,32 @@ RSpec.describe 'ポスト', type: :system do
         end
       end
     end
+
+    describe 'ポストのいいね一覧' do
+      before { post }
+      context '1件もいいねしていない場合' do
+        it '1件もない旨のメッセージが表示されること' do
+          login_as(user)
+          find('.dropdown div[role="button"]').click
+          click_on 'いいねした投稿'
+          Capybara.assert_current_path("/posts/likes", ignore_query: true)
+          expect(current_path).to eq(likes_posts_path), 'いいね一覧ページに遷移できません'
+          expect(page).to have_content('ポストがありません'), 'いいね中のポストが一件もない場合、「ポストがありません」というメッセージが表示されていません'
+        end
+      end
+
+      context 'いいねしている場合' do
+        it 'いいねしたポストが表示されること' do
+          login_as(another_user)
+          visit posts_path
+          find("#like-button-for-post-#{post.id}").click
+          find('.dropdown div[role="button"]').click
+          click_on 'いいねした投稿'
+          Capybara.assert_current_path("/posts/likes", ignore_query: true)
+          expect(current_path).to eq(likes_posts_path), 'いいね一覧ページに遷移できません'
+          expect(page).to have_content post.title, 'いいねしたポストが表示されません'
+        end
+      end
+    end
   end
 end
