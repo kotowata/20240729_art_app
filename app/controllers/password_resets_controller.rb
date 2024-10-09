@@ -11,7 +11,7 @@ class PasswordResetsController < ApplicationController
     @user.deliver_reset_password_instructions! if @user
     # Tell the user instructions have been sent whether or not email was found.
     # This is to not leak information to attackers about which emails exist in the system.
-    redirect_to login_path, success: t('.success')
+    redirect_to login_path, success: t(".success")
   end
 
   # This is the reset password form.
@@ -19,7 +19,7 @@ class PasswordResetsController < ApplicationController
     @token = params[:id]
     @user = User.load_from_reset_password_token(@token)
 
-    return not_authenticated if @user.blank?
+    not_authenticated if @user.blank?
   end
 
   # This action fires when the user has sent the reset password form.
@@ -33,9 +33,9 @@ class PasswordResetsController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     # the next line clears the temporary token and updates the password
     if @user.change_password(params[:user][:password])
-      redirect_to login_path, success: t('.success')
+      redirect_to login_path, success: t(".success")
     else
-      flash.now[:danger] = t('.fail')
+      flash.now[:danger] = t(".fail")
       render :edit, status: :unprocessable_entity
     end
   end
