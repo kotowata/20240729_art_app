@@ -4,6 +4,7 @@ ja:
     post: ポスト
     search_word: 検索ワード
     delete_confirm: 削除しますか？
+    password_reset: パスワードリセット
     flash_message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
@@ -98,6 +99,7 @@ ja:
     new:
       title: パスワードリセット申請
       submit: 送信
+      to_login_page: ログインページへ戻る
     edit:
       title: パスワードリセット
     create:
