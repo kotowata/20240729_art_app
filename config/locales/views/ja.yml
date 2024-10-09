@@ -104,6 +104,6 @@ ja:
       title: パスワードリセット
       to_login_page: ログインページへ戻る
     create:
-      success: パスワードリセット手順を送信しました
+      success: パスワードリセット申請メールを送信しました
     update:
       success: パスワードを変更しました
