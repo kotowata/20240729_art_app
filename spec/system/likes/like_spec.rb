@@ -13,7 +13,7 @@ RSpec.describe 'いいね', type: :system do
     visit '/posts'
     find("#like-button-for-post-#{post.id}").click
     expect(current_path).to eq('/posts'), 'いいね作成後に、掲示板一覧画面が表示されていません'
-    expect(page).to have_content('いいねしました'), 'フラッシュメッセージ「いいねしました」が表示されていません'
+    expect(page).to have_css("#unlike-button-for-post-#{post.id}"), "idがunlike-button-for-post-#{post.id}のリンクが表示されていません"
   end
 
   it 'いいねを外せること' do
@@ -25,6 +25,6 @@ RSpec.describe 'いいね', type: :system do
     # いいねを外す
     find("#unlike-button-for-post-#{like.post.id}").click
     expect(current_path).to eq('/posts'), 'いいね解除後に、掲示板一覧画面が表示されていません'
-    expect(page).to have_content('いいねを外しました'), 'フラッシュメッセージ「いいねを外しました」が表示されていません'
+    expect(page).to have_css("#like-button-for-post-#{post.id}"), "idがlike-button-for-post-#{post.id}のリンクが表示されていません"
   end
 end
