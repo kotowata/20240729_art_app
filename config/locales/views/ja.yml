@@ -102,6 +102,7 @@ ja:
       to_login_page: ログインページへ戻る
     edit:
       title: パスワードリセット
+      to_login_page: ログインページへ戻る
     create:
       success: パスワードリセット手順を送信しました
     update:

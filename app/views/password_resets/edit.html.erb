@@ -1,2 +1,29 @@
-<h1>PasswordResets#edit</h1>
-<p>Find me in app/views/password_resets/edit.html.erb</p>
+<% content_for(:title, t('.title')) %>
+<div class="container mx-auto pt-5 min-h-screen">
+  <div class="mb-3 mt-4">
+    <div class="w-full lg:w-8/12 lg:mx-auto">
+      <h1 class="text-2xl mb-4 text-center"><%= t("password_resets.edit.title") %></h1>
+      <%= form_with url: edit_password_reset_path, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg mx-auto" do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <div class="mb-4">
+          <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2", for: "password" %>
+          <%= f.password_field :password, id: "password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2", for: "password_confirmation" %>
+          <%= f.password_field :password_confirmation, id: "password_confirmation", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <%= f.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+        </div>
+
+        <div class='text-center text-gray-500 md:hover:text-blue-700 mt-6'>
+          <%= link_to t('.to_login_page'), login_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
