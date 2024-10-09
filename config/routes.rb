@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   get "map", to: "static_pages#map"
 
   resources :users, only: %i[new create]
-  get "my_posts", to: "users#my_posts"
   resources :posts, only: %i[index new create show edit update destroy] do
     collection do
       get :likes
+      get :my_posts
     end
   end
   resources :likes, only: %i[create destroy]

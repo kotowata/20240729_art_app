@@ -277,5 +277,22 @@ RSpec.describe 'ポスト', type: :system do
         end
       end
     end
+
+    describe '自分のポスト一覧' do
+      before { post }
+      it '自分のポストが表示されること' do
+        login_as(another_user)
+        click_on('新規投稿')
+        fill_in 'タイトル', with: '自分のポスト'
+        click_button '登録'
+        visit posts_path
+        find('.dropdown div[role="button"]').click
+        click_on '自分の投稿'
+        Capybara.assert_current_path("/posts/my_posts", ignore_query: true)
+        expect(current_path).to eq(my_posts_posts_path), '自分の投稿一覧ページに遷移できません'
+        expect(page).to have_content('自分のポスト'), '自分のポストが表示されません'
+        expect(page).not_to have_content('タイトル'), '他ユーザーのポストが表示されています'
+      end
+    end
   end
 end
