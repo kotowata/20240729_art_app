@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :nick_name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
+  validates :reset_password_token, uniqueness: true, allow_nil: true
 
   has_many :posts, dependent: :destroy
   has_many :authentications, dependent: :destroy
