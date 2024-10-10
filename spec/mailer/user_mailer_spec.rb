@@ -11,8 +11,8 @@ RSpec.describe UserMailer, type: :mailer do
         mail.deliver_now
       end.to change { ActionMailer::Base.deliveries.size }.by(1)
       expect(mail.subject).to eq('パスワードリセット'), 'パスワードリセットメールの件名は「パスワードリセット」にしてください'
-      expect(mail.to).to eq([user.email]), 'パスワードリセットメールの宛先は適切なユーザーに設定してください'
-      expect(mail.from).to eq(['artspotly@gmail.com']), 'パスワードリセットメールの送信元はartspotly@gmail.comに設定してください'
+      expect(mail.to).to eq([ user.email ]), 'パスワードリセットメールの宛先は適切なユーザーに設定してください'
+      expect(mail.from).to eq([ 'artspotly@gmail.com' ]), 'パスワードリセットメールの送信元はartspotly@gmail.comに設定してください'
     end
   end
 end
