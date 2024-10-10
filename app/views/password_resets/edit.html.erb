@@ -3,7 +3,7 @@
   <div class="mb-3 mt-4">
     <div class="w-full lg:w-8/12 lg:mx-auto">
       <h1 class="text-2xl mb-4 text-center"><%= t("password_resets.edit.title") %></h1>
-      <%= form_with url: edit_password_reset_path, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg mx-auto" do |f| %>
+      <%= form_with model: @user, url: password_reset_path(@token), method: :patch, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg mx-auto" do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
         <div class="mb-4">
