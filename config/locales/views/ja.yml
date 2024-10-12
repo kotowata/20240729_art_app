@@ -39,6 +39,10 @@ ja:
       failure: ログインに失敗しました
     destroy:
       success: ログアウトしました
+  oauths:
+    callback:
+      success: Googleアカウントでログインしました
+      failure: ログインに失敗しました
   users:
     new:
       title: ユーザー登録
