@@ -1,5 +1,6 @@
 <% flash.each do |message_type, message| %>
-  <div class="alert <%= message_type == 'success' ? 'bg-green-200 text-green-600' : (message_type == 'failure' ? 'bg-red-200 text-red-600' : '') %>">
-    <%= message %>
+  <div class="alert <%= message_type == 'success' ? 'bg-green-200 text-green-600' : (message_type == 'failure' ? 'bg-red-200 text-red-600' : '') %> p-4 flex justify-between items-center rounded-md shadow-md">
+    <span><%= message %></span>
+    <button class="close-btn text-lg font-bold text-gray-500 hover:text-gray-700" onclick="this.parentElement.style.display='none';">×</button>
   </div>
 <% end %>
