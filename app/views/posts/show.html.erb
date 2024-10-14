@@ -1,16 +1,18 @@
 <% content_for(:title, @post.title) %>
-<div class="max-w-screen-lg mx-auto p-5 min-h-screen">
-  <div class="flex flex-col md:flex-row md:space-x-4 mt-4">
+<div class="max-w-2xl mx-auto p-5 min-h-screen">
+  <div class="flex flex-col mt-4 mb-20">
     <!-- 投稿写真 -->
-    <div class="flex-1 mb-4 md:mb-0">
-      <div class="bg-white shadow-lg overflow-hidden">
-        <%= image_tag @post.post_image_url, class: "w-full h-auto" %>
+    <div class="flex-1 mb-10 mx-auto px-4 mt-5">
+      <div class="bg-black shadow-lg p-4">
+        <div class="bg-white shadow-lg overflow-hidden p-5">
+          <%= image_tag @post.post_image_url, class: "w-full h-auto" %>
+        </div>
       </div>
     </div>
 
     <!-- 投稿情報カード -->
-    <div class="flex-1 md:mt-16">
-      <div class="bg-white shadow-lg p-4 text-center mx-4">
+    <div class="flex-1 mx-20">
+      <div class="bg-white shadow-lg p-4 text-center">
         <h1 class="text-2xl border-b-2 border-neutral-600 font-bold pb-2 mb-2"><%= @post.title %></h1>
         <div class="space-x-2 text-sm text-gray-600 mt-2">
           <% if @post.start_date.present? && @post.end_date.present? %>
