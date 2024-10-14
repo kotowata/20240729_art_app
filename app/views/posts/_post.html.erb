@@ -1,7 +1,7 @@
 <div class="w-80 mx-3 mb-10">
   <div id="post-id-<%= post.id %>">
     <div class="bg-black p-2">
-      <div class="bg-white overflow-hidden">
+      <div class="bg-white overflow-hidden flex justify-center px-4">
         <%= link_to image_tag(post.post_image_url, class: "mx-auto my-5 h-48 object-contain", width: "300", height:"200"), post_path(post), class: "block" %>
       </div>
     </div>
