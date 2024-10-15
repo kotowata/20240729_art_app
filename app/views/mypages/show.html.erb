@@ -8,7 +8,7 @@
         <div class="p-4">
           <div class="flex justify-between items-center mb-4">
             <div class="flex-grow flex justify-center">
-              <%= image_tag current_user.user_icon_url, class: 'w-16 h-16 rounded-full border' %>
+              <%= image_tag current_user.user_icon_url, class: 'rounded-full border', size: '80x80' %>
             </div>
             <%= link_to '編集', edit_mypage_path, class: 'btn btn-primary' %>
           </div>
