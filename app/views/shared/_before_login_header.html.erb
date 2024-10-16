@@ -7,12 +7,12 @@
       <% end %>
 
       <div class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-        <ul class="flex flex-col p-4 md:p-0 mt-4 font-semibold md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+        <ul class="flex mt-4 font-semibold rtl:space-x-reverse md:flex-row md:mt-0">
           <li>
-            <%= link_to t('header.post_index'), posts_path, class: "inline-block py-2 px-3 text-white hover:border-b border-white md:p-0" %>
+            <%= link_to t('header.post_index'), posts_path, class: "inline-block m-2 text-white hover:border-b border-white md:p-0" %>
           </li>
           <li>
-            <%= link_to t('header.login'), login_path, class: "block py-2 px-3 text-white hover:border-b border-white md:p-0" %>
+            <%= link_to t('header.login'), login_path, class: "block m-2 text-white hover:border-b border-white md:p-0" %>
           </li>
         </ul>
       </div>
