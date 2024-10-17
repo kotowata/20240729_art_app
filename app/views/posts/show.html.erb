@@ -7,8 +7,8 @@
     </div>
 
     <!-- 投稿写真 -->
-    <div class="flex-1 mb-10 mx-auto px-4 mt-5">
-      <div class="bg-black shadow-lg p-4 flex justify-center items-center" style="width: 600px; height: 400px;">
+    <div class="flex mb-10 mx-auto px-4 mt-5">
+      <div class="bg-black shadow-lg p-4 flex justify-center items-center max-w-full max-h-full" style="max-width: 600px; max-height: 400px;">
         <div class="bg-white shadow-lg overflow-hidden p-5 flex justify-center items-center" style="width: 100%; height: 100%;">
           <%= image_tag @post.post_image_url, style: "max-width: 100%; max-height: 100%; width: auto; height: auto;" %>
         </div>
@@ -39,7 +39,7 @@
           <%= @post.content %>
         </div>
         <div class="space-x-2 text-sm text-gray-600 mt-2">
-          <%= link_to @post.event_url, @post.event_url, target: "_blank", class: "hover:text-blue-600" %>
+          <%= link_to @post.event_url, @post.event_url, target: "_blank", class: "hover:text-blue-600 break-all" %>
         </div>
       </div>
       <% if current_user && current_user.own?(@post) %>
