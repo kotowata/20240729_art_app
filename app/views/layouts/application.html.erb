@@ -12,6 +12,16 @@
     <%= stylesheet_link_tag "styles", "data-turbo-track": "reload" %>
     <%= favicon_link_tag("favicon.ico") %>
     <%= display_meta_tags(default_meta_tags) %>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03XLHCX1Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q03XLHCX1Y');
+    </script>
   </head>
 
   <body class="min-h-screen haikeigazou">
