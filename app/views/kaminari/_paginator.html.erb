@@ -1,17 +1,18 @@
-<%= paginator.render do %>
-  <nav class="pagination flex items-center justify-center m-10" role="navigation" aria-label="pager">
-    <%= first_page_tag unless current_page.first? %>
-    <%= prev_page_tag unless current_page.first? %>
-    <% each_page do |page| -%>
-      <% if page.display_tag? -%>
-        <%= page_tag page %>
-      <% elsif !page.was_truncated? -%>
-        <%= gap_tag %>
-      <% end -%>
-    <% end -%>
-    <% unless current_page.out_of_range? %>
-      <%= next_page_tag unless current_page.last? %>
-      <%= last_page_tag unless current_page.last? %>
-    <% end %>
-  </nav>
-<% end %>
+<div class="join text-xs m-10 mx-auto flex justify-center">
+  <%= paginator.render do %>
+    <nav class="pagination" role="navigation" aria-label="pager">
+
+      <%= prev_page_tag unless current_page.first? %>
+
+      <% each_page do |page| %>
+        <% if page.display_tag? %>
+          <%= page_tag page %>
+        <% end %>
+      <% end %>
+
+      <% unless current_page.out_of_range? %>
+        <%= next_page_tag unless current_page.last? %>
+      <% end %>
+    </nav>
+  <% end %>
+</div>
