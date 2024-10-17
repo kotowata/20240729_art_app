@@ -1,6 +1,9 @@
 <% content_for(:title, t('.title')) %>
-<div class="my-20 w-5/6 mx-auto max-w-screen-xl min-h-screen">
-  <div class="w-full"><input id="pac-input" class="controls input input-bordered w-full mb-5" type="text" placeholder="エリアを検索"></div>
+<div class="my-20 w-2/3 mx-auto max-w-screen-xl min-h-screen">
+  <div class="flex w-full mb-5"> <!-- flexコンテナを追加 -->
+    <input id="pac-input" class="controls input input-bordered w-full mr-2" type="text" placeholder="エリアを検索">
+    <button class="btn bg-blue-500 text-white hover:bg-blue-600">検索</button> <!-- 検索ボタンを追加 -->
+  </div>
   <div id="map" style="height: 500px;"></div>
 </div>
 
