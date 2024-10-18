@@ -43,3 +43,4 @@
 backup.sql
 /public/uploads/
 /.env
+/coverage
