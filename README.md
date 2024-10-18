@@ -92,6 +92,5 @@ Figma：https://www.figma.com/design/m8NSla9F8igoj9aAnLWSbJ/%E5%8D%92%E6%A5%AD%E
 <br>
 
 ### ER図
-Draw.io：https://drive.google.com/file/d/1NEuuHJSiJAOUKzD8bBh7kXscEzl5CmjB/view?usp=sharing<br>
 [![Image from Gyazo](https://i.gyazo.com/3a4fa2c193c9c7b0b3c6784f14c93787.png)](https://gyazo.com/3a4fa2c193c9c7b0b3c6784f14c93787)
 <br>
