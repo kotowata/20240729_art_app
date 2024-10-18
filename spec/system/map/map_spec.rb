@@ -16,8 +16,8 @@ RSpec.describe 'マップ', type: :system do
       it 'ヘッダーのリンクからマップ画面へ遷移できること' do
         login_as(user)
         click_on('探す')
-        Capybara.assert_current_path("/map", ignore_query: true)
-        expect(current_path).to eq('/map'), 'ヘッダーのリンクからマップ画面へ遷移できません'
+        Capybara.assert_current_path("/maps", ignore_query: true)
+        expect(current_path).to eq('/maps'), 'ヘッダーのリンクからマップ画面へ遷移できません'
       end
 
       it 'マップが表示されること' do

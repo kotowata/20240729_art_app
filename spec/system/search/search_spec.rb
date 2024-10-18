@@ -61,7 +61,7 @@ RSpec.describe '検索機能', type: :system do
           visit posts_path
         end
         it '開催中のポストのみ表示されること' do
-          click_on '開催中のイベントを見る'
+          click_on '開催中のみ'
           Capybara.assert_current_path("/posts", ignore_query: true)
           expect(current_path).to eq(posts_path), 'ポスト一覧でないページに遷移しています'
           expect(page).to have_content(post3.title), '会期絞り込み機能が正しく機能していません'
@@ -78,7 +78,7 @@ RSpec.describe '検索機能', type: :system do
           visit posts_path
         end
         it '1件もない旨のメッセージが表示されること' do
-          click_on '開催中のイベントを見る'
+          click_on '開催中のみ'
           Capybara.assert_current_path("/posts", ignore_query: true)
           expect(current_path).to eq(posts_path), 'ポスト一覧でないページに遷移しています'
           expect(page).to have_content('ポストがありません'), '開催中イベントがない場合、「ポストがありません」というメッセージが表示されていません'
