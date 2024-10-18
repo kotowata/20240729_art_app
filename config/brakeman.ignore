@@ -37,6 +37,40 @@
     {
       "warning_type": "Dynamic Render Path",
       "warning_code": 15,
+      "fingerprint": "38344cf3e27500a65d81d744eb0b18752712286c406b48dfc0d27d65a0eb6bef",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/posts/index.html.erb",
+      "line": 18,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => (Post.ransack(params[:q]).result.where(\"start_date <= ? AND end_date >= ?\", Date.today, Date.today).page(params[:page]).per(12) or (Post.ransack(params[:q]).result.distinct(true).includes(:user).order(:created_at => :desc).page(params[:page]).per(12) or Post.ransack(params[:q]).result(:distinct => true).includes(:user).order(:created_at => :desc).page(params[:page]).per(12))), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "PostsController",
+          "method": "index",
+          "line": 9,
+          "file": "app/controllers/posts_controller.rb",
+          "rendered": {
+            "name": "posts/index",
+            "file": "app/views/posts/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "posts/index"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
       "fingerprint": "c0581d4240ee705f845ecd7caa3aa417ac5f8628e8849e026f550d8bc766d93b",
       "check_name": "Render",
       "message": "Render path contains parameter value",
@@ -67,8 +101,42 @@
         22
       ],
       "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 4,
+      "fingerprint": "f725085c1d745f30bc265373bd765e493e184c3b5d64a42dacc46629843e36b2",
+      "check_name": "LinkToHref",
+      "message": "Potentially unsafe model attribute in `link_to` href",
+      "file": "app/views/posts/show.html.erb",
+      "line": 42,
+      "link": "https://brakemanscanner.org/docs/warning_types/link_to_href",
+      "code": "link_to(Post.find(params[:id]).event_url, Post.find(params[:id]).event_url, :target => \"_blank\", :class => \"hover:text-blue-600 break-all\")",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "PostsController",
+          "method": "show",
+          "line": 33,
+          "file": "app/controllers/posts_controller.rb",
+          "rendered": {
+            "name": "posts/show",
+            "file": "app/views/posts/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "posts/show"
+      },
+      "user_input": "Post.find(params[:id]).event_url",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
     }
   ],
-  "updated": "2024-10-02 21:06:40 +0900",
+  "updated": "2024-10-18 10:35:55 +0900",
   "brakeman_version": "6.2.1"
 }
