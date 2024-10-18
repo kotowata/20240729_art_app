@@ -15,7 +15,7 @@
     <div class="w-full">
       <div class="flex flex-wrap justify-center mb-4">
         <% if @posts.present? %>
-          <%= render @posts, class: "w-64" %>
+          <%= render @posts %>
         <% else %>
           <div class="mb-3 text-gray-600">ポストがありません</div>
         <% end %>
