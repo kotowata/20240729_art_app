@@ -10,7 +10,7 @@
             <div class="flex-grow flex justify-center">
               <%= image_tag current_user.user_icon_url, class: 'rounded-full border', size: '80x80' %>
             </div>
-            <%= link_to '編集', edit_mypage_path, class: 'btn btn-primary' %>
+            <%= link_to '編集', edit_mypage_path, class: "btn bg-blue-500 text-white hover:bg-blue-600" %>
           </div>
           <div class="flex flex-col items-center mb-4">
             <p class="mb-1 text-center">ニックネーム： <span class="ml-2"><%= current_user.nick_name %></span></p>
