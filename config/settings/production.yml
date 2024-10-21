@@ -1,2 +1,2 @@
 sorcery:
-    google_callback_url: "https://two0240729-art-app.onrender.com/oauth/callback?provider=google"
+    google_callback_url: "https://artspotly.com/oauth/callback?provider=google"
