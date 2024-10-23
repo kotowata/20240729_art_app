@@ -37,7 +37,7 @@ https://artspotly.com
 アプリ＝展示会場<br>
 のようにして視覚的に楽しめるアプリを目指します。<br>
 
-|ポスト一覧||ポスト詳細|
+|ポスト一覧|ポスト詳細|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/a7756c211f575b18c564676f896b9344.gif)](https://gyazo.com/a7756c211f575b18c564676f896b9344)|[![Image from Gyazo](https://i.gyazo.com/5eadab7e3a21f96a162042a055fb5132.jpg)](https://gyazo.com/5eadab7e3a21f96a162042a055fb5132)|
 |説明文|説明文|
