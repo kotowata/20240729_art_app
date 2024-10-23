@@ -51,12 +51,12 @@ https://artspotly.com
 
 |新規投稿|マイページ|
 |:-:|:-:|
-|[![Image from Gyazo](https://i.gyazo.com/dba27067c8e7fd2367e73ab748c2075e.gif)](https://gyazo.com/dba27067c8e7fd2367e73ab748c2075e)|[![Image from Gyazo](https://i.gyazo.com/dea1dc5a642abc7fd255fa2d67349fff.gif)](https://gyazo.com/dea1dc5a642abc7fd255fa2d67349fff)|
+|[![Image from Gyazo](https://i.gyazo.com/875671e44a02b5e86039e63b73e353e5.png)](https://gyazo.com/875671e44a02b5e86039e63b73e353e5)|[![Image from Gyazo](https://i.gyazo.com/4ec02820402c0905336c1140e715c66b.png)](https://gyazo.com/4ec02820402c0905336c1140e715c66b)|
 |説明文|説明文|
 
-|周辺美術展検索|開催中イベント検索|
+|周辺美術展検索|ポスト絞り込み|
 |:-:|:-:|
-|[![Image from Gyazo](https://i.gyazo.com/ef27dfd275146740be856ce977b25223.gif)](https://gyazo.com/ef27dfd275146740be856ce977b25223)|[![Image from Gyazo](https://i.gyazo.com/f61e91949a62550ca504cffe9a7ad405.gif)](https://gyazo.com/f61e91949a62550ca504cffe9a7ad405)|
+|[![Image from Gyazo](https://i.gyazo.com/e2e6263ff826ecf8b497b974a9f05431.jpg)](https://gyazo.com/e2e6263ff826ecf8b497b974a9f05431)|[![Image from Gyazo](https://i.gyazo.com/5c964673ba924a9187f202e3915f1061.png)](https://gyazo.com/5c964673ba924a9187f202e3915f1061)|
 |説明文|説明文|
 
 ## ■ 機能の実装方針予定
