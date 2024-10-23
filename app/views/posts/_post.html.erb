@@ -13,7 +13,7 @@
         </div>
         <ul class="flex space-x-1 mt-1 text-gray-600 justify-between">
           <div class="flex items-center">
-            <li><%= image_tag post.user.user_icon_url, class: 'rounded-full border mr-1', size: '20x20' %></li>
+            <li><%= image_tag post.user.user_icon_url, class: 'rounded-full border mr-1  w-6 h-6 object-cover' %></li>
             <li><i class="bi bi-person text-sm"></i><%= post.user.nick_name %></li>
           </div>
           <% if current_user && current_user.own?(post) %>
