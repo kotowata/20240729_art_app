@@ -26,8 +26,6 @@ ja:
   static_pages:
     top:
       title: ArtSpotly
-    map:
-      title: 美術館マップ
   user_sessions:
     new:
       title: ログイン
@@ -69,6 +67,9 @@ ja:
       success: いいねしました
     destroy:
       success: いいねを外しました
+  maps:
+    show:
+      title: 現在地から探す
   mypages:
     show:
       title: マイページ
