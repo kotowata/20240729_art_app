@@ -39,20 +39,19 @@ https://artspotly.com
 
 |ポスト一覧|ポスト詳細|
 |:-:|:-:|
-|[![Image from Gyazo](https://i.gyazo.com/a7756c211f575b18c564676f896b9344.gif)](https://gyazo.com/a7756c211f575b18c564676f896b9344)|[![Image from Gyazo](https://i.gyazo.com/5eadab7e3a21f96a162042a055fb5132.jpg)](https://gyazo.com/5eadab7e3a21f96a162042a055fb5132)|
-|説明文|説明文|
-
+|[![Image from Gyazo](https://i.gyazo.com/b9672f021ba53d3864af69bc4bf4e881.jpg)](https://gyazo.com/b9672f021ba53d3864af69bc4bf4e881)|[![Image from Gyazo](https://i.gyazo.com/9992058aeb729ec4e0a9d20da1a0717d.jpg)](https://gyazo.com/9992058aeb729ec4e0a9d20da1a0717d)|
+|ログイン不要で閲覧できる一覧画面<br>美術館風のデザイン|展示の詳細を見ることができる|
 
 ## ■ 機能
 |トップ|ログイン|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/86671e46953999790e55ff4caaaae916.png)](https://gyazo.com/86671e46953999790e55ff4caaaae916)|[![Image from Gyazo](https://i.gyazo.com/badc2eea32e5dab69b62df31cfe906af.png)](https://gyazo.com/badc2eea32e5dab69b62df31cfe906af)|
-|説明文|説明文|
+|使い方と「使ってみるボタン」を設置し<br>使いやすい動線設計|Googleアカウントでのログインが可能|
 
 |新規投稿|周辺美術展検索|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/875671e44a02b5e86039e63b73e353e5.png)](https://gyazo.com/875671e44a02b5e86039e63b73e353e5)|[![Image from Gyazo](https://i.gyazo.com/e2e6263ff826ecf8b497b974a9f05431.jpg)](https://gyazo.com/e2e6263ff826ecf8b497b974a9f05431)|
-|説明文|説明文|
+|選択フォームなど入力しやすい設計|現在地付近の美術展を調べられる<br>任意の地名での検索も可能|
 
 ## ■ 機能の実装方針予定
 | カテゴリ | 技術 |
