@@ -44,17 +44,17 @@ https://artspotly.com
 
 
 ## ■ 機能
-|トップ||ログイン|
+|トップ|ログイン|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/8bd3401cdf5a25c8b98295de44e1cf87.gif)](https://gyazo.com/8bd3401cdf5a25c8b98295de44e1cf87)|[![Image from Gyazo](https://i.gyazo.com/badc2eea32e5dab69b62df31cfe906af.png)](https://gyazo.com/badc2eea32e5dab69b62df31cfe906af)|
 |説明文|説明文|
 
-|新規投稿||マイページ|
+|新規投稿|マイページ|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/dba27067c8e7fd2367e73ab748c2075e.gif)](https://gyazo.com/dba27067c8e7fd2367e73ab748c2075e)|[![Image from Gyazo](https://i.gyazo.com/dea1dc5a642abc7fd255fa2d67349fff.gif)](https://gyazo.com/dea1dc5a642abc7fd255fa2d67349fff)|
 |説明文|説明文|
 
-|周辺美術展検索||開催中イベント検索|
+|周辺美術展検索|開催中イベント検索|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/ef27dfd275146740be856ce977b25223.gif)](https://gyazo.com/ef27dfd275146740be856ce977b25223)|[![Image from Gyazo](https://i.gyazo.com/f61e91949a62550ca504cffe9a7ad405.gif)](https://gyazo.com/f61e91949a62550ca504cffe9a7ad405)|
 |説明文|説明文|
