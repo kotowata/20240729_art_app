@@ -46,17 +46,12 @@ https://artspotly.com
 ## ■ 機能
 |トップ|ログイン|
 |:-:|:-:|
-|[![Image from Gyazo](https://i.gyazo.com/8bd3401cdf5a25c8b98295de44e1cf87.gif)](https://gyazo.com/8bd3401cdf5a25c8b98295de44e1cf87)|[![Image from Gyazo](https://i.gyazo.com/badc2eea32e5dab69b62df31cfe906af.png)](https://gyazo.com/badc2eea32e5dab69b62df31cfe906af)|
+|[![Image from Gyazo](https://i.gyazo.com/86671e46953999790e55ff4caaaae916.png)](https://gyazo.com/86671e46953999790e55ff4caaaae916)|[![Image from Gyazo](https://i.gyazo.com/badc2eea32e5dab69b62df31cfe906af.png)](https://gyazo.com/badc2eea32e5dab69b62df31cfe906af)|
 |説明文|説明文|
 
-|新規投稿|マイページ|
+|新規投稿|周辺美術展検索|
 |:-:|:-:|
-|[![Image from Gyazo](https://i.gyazo.com/875671e44a02b5e86039e63b73e353e5.png)](https://gyazo.com/875671e44a02b5e86039e63b73e353e5)|[![Image from Gyazo](https://i.gyazo.com/4ec02820402c0905336c1140e715c66b.png)](https://gyazo.com/4ec02820402c0905336c1140e715c66b)|
-|説明文|説明文|
-
-|周辺美術展検索|ポスト絞り込み|
-|:-:|:-:|
-|[![Image from Gyazo](https://i.gyazo.com/e2e6263ff826ecf8b497b974a9f05431.jpg)](https://gyazo.com/e2e6263ff826ecf8b497b974a9f05431)|[![Image from Gyazo](https://i.gyazo.com/5c964673ba924a9187f202e3915f1061.png)](https://gyazo.com/5c964673ba924a9187f202e3915f1061)|
+|[![Image from Gyazo](https://i.gyazo.com/875671e44a02b5e86039e63b73e353e5.png)](https://gyazo.com/875671e44a02b5e86039e63b73e353e5)|[![Image from Gyazo](https://i.gyazo.com/e2e6263ff826ecf8b497b974a9f05431.jpg)](https://gyazo.com/e2e6263ff826ecf8b497b974a9f05431)|
 |説明文|説明文|
 
 ## ■ 機能の実装方針予定
