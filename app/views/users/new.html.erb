@@ -6,7 +6,7 @@
         <div class="card bg-base-100 w-96 shadow-xl mt-5">
           <div class="card-body">
             <h2 class="card-title flex justify-center"><%= t("users.new.title") %></h2>
-            <%= form_with model: @user, class: "px-8 pt-6 pb-8 max-w-lg mx-auto" do |f| %>
+            <%= form_with model: @user, class: "px-8 pt-6 pb-8 max-w-lg" do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
 
               <div class="mb-4">

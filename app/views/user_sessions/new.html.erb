@@ -6,7 +6,7 @@
         <div class="card bg-base-100 w-96 shadow-xl mt-5">
           <div class="card-body">
             <h2 class="card-title flex justify-center"><%= t("user_sessions.new.title") %></h2>
-            <%= form_with url: login_path, class: "px-8 pt-6 pb-8 max-w-lg mx-auto" do |f| %>
+            <%= form_with url: login_path, class: "px-8 pt-6 pb-8 max-w-lg" do |f| %>
 
               <div class="mb-4">
                 <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: "nick_name" %>
