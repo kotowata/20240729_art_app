@@ -30,7 +30,7 @@ ja:
     new:
       title: ログイン
       login: ログイン
-      to_register_page: 登録ページへ
+      to_register_page: 新規登録
       password_forget: パスワードをお忘れの方はこちら
     create:
       success: ログインしました
@@ -43,7 +43,7 @@ ja:
       failure: ログインに失敗しました
   users:
     new:
-      title: ユーザー登録
+      title: 新規登録
       to_login_page: ログインページへ戻る
     create:
       success: ユーザー登録が完了しました

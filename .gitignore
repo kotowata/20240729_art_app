@@ -8,6 +8,7 @@
 /.bundle
 
 # Ignore all environment files (except templates).
+/.env
 /.env*
 !/.env*.erb
 
@@ -30,6 +31,7 @@
 !/tmp/storage/.keep
 
 /public/assets
+/public/uploads/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
@@ -38,9 +40,11 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
 .DS_Store
+
 /test
-backup.sql
-/public/uploads/
-/.env
+
 /coverage
+
+backup.sql
