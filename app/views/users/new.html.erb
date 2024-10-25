@@ -3,47 +3,45 @@
   <div class="max-w-full mx-auto px-4 mt-10 mb-20">
     <div class="flex flex-col">
       <div class="w-full mx-auto">
-        <div class="card bg-base-100 w-full max-w-md shadow-xl mt-5">
-          <div class="card-body">
-            <h2 class="card-title flex justify-center"><%= t("users.new.title") %></h2>
-            <%= form_with model: @user, class: "px-4 md:px-8 pt-6 pb-8 max-w-lg" do |f| %>
-              <%= render 'shared/error_messages', object: f.object %>
+        <div class="card bg-base-100 w-96 max-w-full shadow-xl mt-5 p-4">
+          <h2 class="card-title flex justify-center"><%= t("users.new.title") %></h2>
+          <%= form_with model: @user, class: "px-4 md:px-8 pt-6 pb-2 max-w-lg" do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
 
-              <div class="mb-4">
-                <%= f.label :nick_name, "#{t('activerecord.attributes.user.nick_name')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "nick_name" %>
-                <%= f.text_field :nick_name, id: "nick_name", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
-              </div>
+            <div class="mb-4">
+              <%= f.label :nick_name, "#{t('activerecord.attributes.user.nick_name')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm", for: "nick_name" %>
+              <%= f.text_field :nick_name, id: "nick_name", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight", placeholder: " ", required: true %>
+            </div>
 
-              <div class="mb-4">
-                <%= f.label :email, "#{t('activerecord.attributes.user.email')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "email" %>
-                <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
-              </div>
+            <div class="mb-4">
+              <%= f.label :email, "#{t('activerecord.attributes.user.email')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm", for: "email" %>
+              <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight", placeholder: " ", required: true %>
+            </div>
 
-              <div class="mb-4">
-                <%= f.label :password, "#{t('activerecord.attributes.user.password')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "password" %>
-                <%= f.password_field :password, id: "password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
-              </div>
+            <div class="mb-4">
+              <%= f.label :password, "#{t('activerecord.attributes.user.password')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm", for: "password" %>
+              <%= f.password_field :password, id: "password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight", placeholder: " ", required: true %>
+            </div>
 
-              <div class="mb-4">
-                <%= f.label :password_confirmation, "#{t('activerecord.attributes.user.password_confirmation')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "password_confirmation" %>
-                <%= f.password_field :password_confirmation, id: "password_confirmation", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
-              </div>
+            <div class="mb-4">
+              <%= f.label :password_confirmation, "#{t('activerecord.attributes.user.password_confirmation')} <span class='text-red-400 font-light'>(必須)</span>".html_safe, class: "block text-gray-700 text-sm", for: "password_confirmation" %>
+              <%= f.password_field :password_confirmation, id: "password_confirmation", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight", placeholder: " ", required: true %>
+            </div>
 
-              <div class="mb-6">
-                <%= f.label :user_icon, "#{t('activerecord.attributes.user.user_icon')} <span class='text-grey-400 font-light'>(任意)</span>".html_safe, class: "block text-gray-700 text-sm font-bold mb-2", for: "user_icon" %>
-                <%= f.file_field :user_icon, id: "user_icon", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-                <%= f.hidden_field :user_icon_cache %>
-              </div>
+            <div class="mb-6">
+              <%= f.label :user_icon, "#{t('activerecord.attributes.user.user_icon')} <span class='text-grey-400 font-light'>(任意)</span>".html_safe, class: "block text-gray-700 text-sm", for: "user_icon" %>
+              <%= f.file_field :user_icon, id: "user_icon", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" %>
+              <%= f.hidden_field :user_icon_cache %>
+            </div>
 
-              <div class="flex items-center justify-end">
-                <%= f.submit class: "btn bg-slate-700 hover:bg-slate-500 text-white" %>
-              </div>
+            <div class="flex items-center justify-end">
+              <%= f.submit class: "btn bg-slate-700 hover:bg-slate-500 text-white" %>
+            </div>
 
-              <div class="text-center text-gray-500 md:hover:text-blue-700 text-xs mt-6">
-                <%= link_to t('.to_login_page'), login_path %>
-              </div>
-            <% end %>
-          </div>
+            <div class="text-center text-gray-500 md:hover:text-blue-700 text-xs mt-6">
+              <%= link_to t('.to_login_page'), login_path %>
+            </div>
+          <% end %>
         </div>
 
         <div class="divider my-5">OR</div>

@@ -1,16 +1,15 @@
 <% content_for(:title, t('.title')) %>
 <div class="flex flex-col justify-start min-h-screen">
-  <div class="max-w-4xl mx-auto px-4 mt-10">
+  <div class="max-w-full mx-auto px-4 mt-10 mb-20">
     <div class="flex flex-col">
       <div class="w-full mx-auto">
-        <div class="card bg-base-100 w-96 shadow-xl mt-5">
-          <div class="card-body">
+        <div class="card bg-base-100 w-96 max-w-full shadow-xl mt-5 p-4">
             <h2 class="card-title flex justify-center"><%= t("password_resets.new.title") %></h2>
-            <%= form_with url: password_resets_path, class: "px-8 pt-6 pb-8 max-w-lg" do |f| %>
+            <%= form_with url: password_resets_path, class: "px-4 md:px-8 pt-6 pb-2 max-w-lg" do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
 
               <div class="mb-4">
-                <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: "email" %>
+                <%= f.label :email, class: "block text-gray-700 text-sm mb-2", for: "email" %>
                 <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "", required: true %>
               </div>
 
@@ -22,7 +21,6 @@
                 <%= link_to t('.to_login_page'), login_path %>
               </div>
             <% end %>
-          </div>
         </div>
       </div>
     </div>

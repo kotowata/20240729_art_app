@@ -1,34 +1,33 @@
 <% content_for(:title, t('.title')) %>
 <div class="flex flex-col justify-start min-h-screen">
-  <div class="max-w-4xl mx-auto px-4 mt-10">
+  <div class="max-w-full mx-auto px-4 mt-10 mb-20">
     <div class="flex flex-col">
       <div class="w-full mx-auto">
-        <div class="card bg-base-100 w-96 shadow-xl mt-5">
-          <div class="card-body">
-            <h2 class="card-title flex justify-center"><%= t("user_sessions.new.title") %></h2>
-            <%= form_with url: login_path, class: "px-8 pt-6 pb-8 max-w-lg" do |f| %>
+        <div class="card bg-base-100 w-96 max-w-full shadow-xl mt-5 p-4">
+          <h2 class="card-title flex justify-center"><%= t("user_sessions.new.title") %></h2>
+          <%= form_with url: login_path, class: "px-4 md:px-8 pt-6 pb-2 max-w-lg" do |f| %>
 
-              <div class="mb-4">
-                <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: "nick_name" %>
-                <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
-              </div>
+            <div class="mb-4">
+              <%= f.label :email, class: "block text-gray-700 text-sm", for: "nick_name" %>
+              <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight", placeholder: " ", required: true %>
+            </div>
 
-              <div class="mb-6">
-                <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2", for: "nick_name" %>
-                <%= f.password_field :password, id: "password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: " ", required: true %>
-              </div>
+            <div class="mb-6">
+              <%= f.label :password, class: "block text-gray-700 text-sm", for: "nick_name" %>
+              <%= f.password_field :password, id: "password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight", placeholder: " ", required: true %>
+            </div>
 
-              <div class="flex items-center justify-end">
-                <%= f.submit t('helpers.submit.login'), class: "btn bg-slate-700 hover:bg-slate-500 text-white" %>
-              </div>
+            <div class="flex items-center justify-end">
+              <%= f.submit t('helpers.submit.login'), class: "btn bg-slate-700 hover:bg-slate-500 text-white" %>
+            </div>
 
-              <div class="text-center text-gray-500 mt-6 text-xs">
-                <%= link_to t('.to_register_page'), new_user_path, class: "hover:text-blue-700" %>
-                <span>/</span>
-                <%= link_to t('.password_forget'), new_password_reset_path, class: "hover:text-blue-700" %>
-              </div>
-            <% end %>
-          </div>
+            <div class="text-center text-gray-500 mt-6 text-xs">
+              <%= link_to t('.to_register_page'), new_user_path, class: "hover:text-blue-700" %>
+              <span>/</span>
+              <%= link_to t('.password_forget'), new_password_reset_path, class: "hover:text-blue-700" %>
+            </div>
+          <% end %>
+
         </div>
 
         <div class="divider my-5">OR</div>
@@ -44,7 +43,6 @@
             Googleでログイン
           <% end %>
         </div>
-
       </div>
     </div>
   </div>
