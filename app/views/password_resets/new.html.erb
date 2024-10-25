@@ -1,24 +1,30 @@
 <% content_for(:title, t('.title')) %>
-<div class="container mx-auto pt-5 min-h-screen">
-  <div class="mb-3 mt-4">
-    <div class="w-full lg:w-8/12 lg:mx-auto">
-      <h1 class="text-2xl mb-4 text-center"><%= t("password_resets.new.title") %></h1>
-      <%= form_with url: password_resets_path, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-lg mx-auto" do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+<div class="flex flex-col justify-start min-h-screen">
+  <div class="max-w-4xl mx-auto px-4 mt-10">
+    <div class="flex flex-col">
+      <div class="w-full mx-auto">
+        <div class="card bg-base-100 w-96 shadow-xl mt-5">
+          <div class="card-body">
+            <h2 class="card-title flex justify-center"><%= t("password_resets.new.title") %></h2>
+            <%= form_with url: password_resets_path, class: "px-8 pt-6 pb-8 max-w-lg" do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
 
-        <div class="mb-4">
-          <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: "email" %>
-          <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "artspotly@example.com", required: true %>
-        </div>
+              <div class="mb-4">
+                <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: "email" %>
+                <%= f.text_field :email, id: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "", required: true %>
+              </div>
 
-        <div class="flex items-center justify-between">
-          <%= f.submit t(".submit"), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-        </div>
+              <div class="flex items-center justify-end">
+                <%= f.submit t(".submit"), class: "btn bg-slate-700 hover:bg-slate-500 text-white" %>
+              </div>
 
-        <div class='text-center text-gray-500 md:hover:text-blue-700 mt-6'>
-          <%= link_to t('.to_login_page'), login_path %>
+              <div class="text-center text-gray-500 md:hover:text-blue-700 mt-6 text-xs">
+                <%= link_to t('.to_login_page'), login_path %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
