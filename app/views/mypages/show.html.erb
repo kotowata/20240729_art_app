@@ -1,22 +1,29 @@
 <% content_for(:title, t('.title')) %>
-<div class="container mx-auto pt-5 min-h-screen">
-  <div class="mb-3 mt-4">
-    <div class="w-full lg:w-8/12 lg:mx-auto">
-      <h1 class="text-2xl mb-4 text-center"><%= t('.title') %></h1>
+<div class="flex flex-col justify-start min-h-screen">
+  <div class="max-w-full mx-auto px-4 mt-10 mb-20">
+    <div class="flex flex-col">
+      <div class="w-full mx-auto">
+        <div class="card bg-base-100 w-96 max-w-full shadow-xl mt-5 p-4">
+          <h1 class="card-title flex justify-center"><%= t('.title') %></h1>
+          <div class="px-4 md:px-8 pt-6 pb-2 max-w-lg">
 
-      <div class="bg-white shadow-md rounded-lg mb-5 mx-auto w-2/3">
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-4">
-            <div class="flex-grow flex justify-center">
+            <div class="mb-4 flex justify-center items-center">
               <%= image_tag current_user.user_icon_url, class: 'rounded-full border w-20 h-20 object-cover' %>
             </div>
-            <%= link_to '編集', edit_mypage_path, class: "btn bg-blue-500 text-white hover:bg-blue-600" %>
-          </div>
-          <div class="flex flex-col items-center mb-4">
-            <p class="mb-1 text-center">ニックネーム： <span class="ml-2"><%= current_user.nick_name %></span></p>
-            <p class="mb-1 text-center">メールアドレス： <span class="ml-2"><%= current_user.email %></span></p>
+            <div class="mb-4">
+              <p>ニックネーム： <span class="ml-2"><%= current_user.nick_name %></span></p>
+            </div>
+            <div class="mb-4">
+              <p>メールアドレス： <span class="ml-2"><%= current_user.email %></span></p>
+            </div>
+            
+            <div class="flex items-center justify-end">
+              <%= link_to '編集', edit_mypage_path, class: "btn bg-slate-700 hover:bg-slate-500 text-white" %>
+            </div>
+
           </div>
         </div>
+
       </div>
       <div class="mx-auto">
         <div class="p-4 flex flex-col justify-center items-center">
