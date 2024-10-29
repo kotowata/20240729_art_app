@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "sorcery"
-gem "rails-i18n", "~> 7.0.0"
+gem "rails-i18n", "~> 7.0.10"
 gem "carrierwave", "~> 3.0"
 gem "ransack", "~> 4.2.1"
 gem "kaminari"

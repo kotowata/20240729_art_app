@@ -206,7 +206,7 @@ GEM
       railties (>= 6.1)
       rexml
     logger (1.6.1)
-    loofah (2.22.0)
+    loofah (2.23.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -313,7 +313,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.9)
+    rails-i18n (7.0.10)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (7.2.0)
@@ -479,7 +479,7 @@ DEPENDENCIES
   pry-byebug
   puma (>= 5.0)
   rails (~> 7.2.0)
-  rails-i18n (~> 7.0.0)
+  rails-i18n (~> 7.0.10)
   ransack (~> 4.2.1)
   rspec-rails
   rubocop (~> 1.65)
