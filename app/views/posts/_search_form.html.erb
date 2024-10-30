@@ -1,6 +1,6 @@
 <%= search_form_for q, url: url do |f| %>
-  <div class="flex mb-3">
-    <%= f.search_field :title_or_content_cont, class: 'flex-1 border border-gray-300 rounded-r-md rounded-l-md p-2 mr-2', placeholder: t('defaults.search_word') %>
-    <%= f.submit class: "btn bg-blue-500 text-white hover:bg-blue-600" %>
+  <div class="join mb-3 md:mr-2">
+    <%= f.search_field :title_or_content_cont, class: 'join-item flex-1 border border-gray-300 rounded-r-md rounded-l-md p-2 w-full md:w-80', placeholder: t('defaults.search_word') %>
+    <%= f.submit class: "join-item btn bg-blue-500 text-white hover:bg-blue-600" %>
   </div>
 <% end %>

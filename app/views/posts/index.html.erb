@@ -1,8 +1,9 @@
 <% content_for(:title, t('.title')) %>
 <div class="max-w-6xl mx-auto mt-3 pt-5 min-h-screen">
+
   <!-- 検索フォーム -->
   <div class="flex flex-wrap justify-center">
-    <div class="mx-3">
+    <div class="flex justify-center w-full md:w-auto">
       <%= render 'search_form', q: @q, url: posts_path, class: "mx-2" %>
     </div>
     <div>
@@ -10,8 +11,9 @@
       <%= link_to '全て表示', posts_path(status: 'all'), class: 'btn ml-2' %>
     </div>
   </div>
+
   <!-- 掲示板一覧 -->
-  <div class="flex flex-wrap justify-center mt-6">
+  <div class="mt-6">
     <div class="w-full">
       <div class="flex flex-wrap justify-center mb-4">
         <% if @posts.present? %>
