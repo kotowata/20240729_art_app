@@ -70,6 +70,8 @@ ja:
   maps:
     show:
       title: 現在地から探す
+    search_area: エリア検索
+    search: 検索
   mypages:
     show:
       title: マイページ

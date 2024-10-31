@@ -1,8 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <div class="my-20 w-5/6 md:w-2/3 mx-auto max-w-screen-xl min-h-screen">
-  <div class="flex w-full mb-5 join"> <!-- flexコンテナを追加 -->
-    <input id="pac-input" class="controls w-full join-item" type="text" placeholder="エリアを検索">
-    <button class="btn bg-blue-500 text-white hover:bg-blue-600 join-item">検索</button> <!-- 検索ボタンを追加 -->
+  <div class="flex w-full mb-5 join">
+    <input id="pac-input" class="controls w-full join-item" type="text" placeholder="<%= t("maps.search_area") %>">
+    <button class="btn bg-blue-500 text-white hover:bg-blue-600 join-item"><%= t("maps.search") %></button>
   </div>
   <div id="map" style="height: 500px;"></div>
 </div>
