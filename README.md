@@ -1,6 +1,4 @@
 # ArtSpotly
-
-## ■サービスURL
 https://artspotly.com
 
 ## ■サービス概要
@@ -60,10 +58,10 @@ https://artspotly.com
 |選択フォームなど入力しやすい設計|現在地付近の美術展を調べられる<br>任意の地名での検索も可能|
 <br>
 
-## ■ 機能の実装方針予定
+## ■ 技術スタック
 | カテゴリ | 技術 |
 ----|----
-| フロントエンド | HTML, Javascript, CSS, Tailwind CSS, daisyUI |
+| フロントエンド | HTML, Javascript, CSS, TailwindCSS, daisyUI |
 | バックエンド | Ruby 3.2.3, Rails 7.2.1 |
 | データベース | PostgreSQL |
 | 開発環境 | Docker |
@@ -72,10 +70,10 @@ https://artspotly.com
 | Web API | Google Maps API( Maps Javascript API / Places API / Geocoding API / Geolocation API )
 <br>
 
-## 画面遷移図
+### 画面遷移図
 Figma：https://www.figma.com/design/m8NSla9F8igoj9aAnLWSbJ/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_rev1?node-id=0-1&t=ig0lTzq7U6TB9yCh-1
 <br>
 
-## ER図
+### ER図
 [![Image from Gyazo](https://i.gyazo.com/3a4fa2c193c9c7b0b3c6784f14c93787.png)](https://gyazo.com/3a4fa2c193c9c7b0b3c6784f14c93787)
 <br>
