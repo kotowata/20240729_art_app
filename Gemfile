@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 
 gem "sorcery"
 gem "rails-i18n", "~> 7.0.0"
-gem "carrierwave", "~> 3.0"
+gem "carrierwave", "~> 3.1"
 gem "ransack", "~> 4.2.1"
 gem "kaminari"
 gem "fog-aws"
